@@ -1,0 +1,17 @@
+[project]
+name = "llm-zoomcamp"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "gitsource",
+    "minsearch",
+    "numpy",
+    "onnxruntime",
+    "openai",
+    "pydantic",
+    "python-dotenv",
+    "pandas",
+    "tokenizers",
+]
