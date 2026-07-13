@@ -15,3 +15,11 @@ dependencies = [
     "pandas",
     "tokenizers",
 ]
+
+[tool.uv]
+link-mode = "copy"
+
+[tool.uv.workspace]
+members = [
+    "llm-zoomcamp-hw5",
+]
