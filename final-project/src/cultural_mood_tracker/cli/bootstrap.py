@@ -9,7 +9,7 @@ from cultural_mood_tracker.pipeline.bootstrap import bootstrap_application
 
 
 def parse_args() -> argparse.Namespace:
-    parser = argparse.ArgumentParser(description="Prepare the complete SQL + RAG application.")
+    parser = argparse.ArgumentParser(description="Prepare the local data stores for the RAG application.")
     parser.add_argument("--sample", action="store_true", help="Generate a small local sample corpus.")
     parser.add_argument("--source-run-id", default=None)
     parser.add_argument("--process-run-id", default=None)

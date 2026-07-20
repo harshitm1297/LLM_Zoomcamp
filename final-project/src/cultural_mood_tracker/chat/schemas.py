@@ -6,7 +6,7 @@ from typing import Any, Literal, TypedDict
 from cultural_mood_tracker.rag.retrieval import RetrievedChunk
 
 
-ChatMode = Literal["fast_sql", "rag", "sql", "hybrid", "recommendation"]
+ChatMode = Literal["rag"]
 
 
 class ChatResponse(TypedDict):
@@ -29,10 +29,9 @@ class RetrievedEvidence:
 @dataclass(frozen=True)
 class OrchestratorResult:
     answer: str
-    mode: ChatMode
-    used_sql: bool
+    mode: ChatMode = "rag"
+    used_sql: bool = False
     retrieved_chunks: list[RetrievedChunk] = field(default_factory=list)
-    sql_results: dict[str, Any] = field(default_factory=dict)
 
     @property
     def retrieved_chunk_ids(self) -> list[str]:

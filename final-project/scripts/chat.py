@@ -18,9 +18,7 @@ from cultural_mood_tracker.rag.embeddings import DEFAULT_EMBEDDING_MODEL
 from cultural_mood_tracker.rag.llm import DEFAULT_MODEL
 from cultural_mood_tracker.rag.prompting import DEFAULT_MAX_CONTEXT_CHARS
 
-# `rich` is an optional presentation dependency: if it isn't installed yet (e.g. a teammate
-# hasn't re-run `pip install -r requirements.txt`), the CLI falls back to the original plain-text
-# output instead of crashing. Nothing about routing, retrieval, SQL, or generation depends on it.
+# `rich` is optional; plain output remains available for logs, pipes, and minimal environments.
 try:
     from rich.console import Console
     from rich.markdown import Markdown
@@ -32,24 +30,19 @@ except ImportError:
     _RICH_AVAILABLE = False
 
 
-# label + rich color per mode, so the same mode is always visually consistent across a session.
 MODE_STYLES: dict[str, tuple[str, str]] = {
-    "fast_sql": ("SQL", "cyan"),
-    "sql": ("SQL", "cyan"),
-    "rag": ("RAG", "green"),
-    "hybrid": ("HYBRID", "magenta"),
-    "recommendation": ("RECOMMENDATION", "yellow"),
+    "rag": ("RAG", "blue"),
 }
 
 
 def parse_args() -> argparse.Namespace:
-    parser = argparse.ArgumentParser(description="Unified Cultural Mood Tracker chat orchestrator.")
+    parser = argparse.ArgumentParser(description="RAG-only Pop Culture Detective chatbot.")
     parser.add_argument(
         "--query",
         default=None,
         help="Natural-language question to answer. If omitted, starts an interactive chat loop.",
     )
-    parser.add_argument("--top-k", type=int, default=3, help="Number of ChromaDB chunks for RAG/hybrid mode.")
+    parser.add_argument("--top-k", type=int, default=5, help="Number of Chroma passages to retrieve.")
     parser.add_argument(
         "--persist-dir",
         default=Path(DEFAULT_CHROMA_DB_DIR),
@@ -95,8 +88,6 @@ def _use_rich(args: argparse.Namespace) -> bool:
 
 
 def _print_response_plain(response: dict) -> None:
-    print(f"Mode: {response['mode']}")
-    print(f"Used SQL: {response['used_sql']}")
     if response["retrieved_chunk_ids"]:
         print(f"Retrieved chunks: {', '.join(response['retrieved_chunk_ids'])}")
     print()
@@ -105,8 +96,7 @@ def _print_response_plain(response: dict) -> None:
 
 def _print_response_rich(console: "Console", response: dict) -> None:
     label, color = MODE_STYLES.get(response["mode"], (response["mode"].upper(), "white"))
-    sql_flag = "yes" if response["used_sql"] else "no"
-    subtitle = f"used_sql={sql_flag}"
+    subtitle = f"{len(response['retrieved_chunk_ids'])} retrieved passages"
 
     console.print(
         Panel(
@@ -154,11 +144,11 @@ def _interactive_loop(orchestrator: ChatOrchestrator, *, args: argparse.Namespac
 
     if console is not None:
         console.print(
-            "[bold]Unified Cultural Mood Tracker chat ready.[/bold] "
+            "[bold]Pop Culture Detective RAG chat ready.[/bold] "
             "Type a question, or 'exit' to quit."
         )
     else:
-        print("Unified Cultural Mood Tracker chat ready. Type a question, or 'exit' to quit.")
+        print("Pop Culture Detective RAG chat ready. Type a question, or 'exit' to quit.")
 
     while True:
         try:
@@ -198,6 +188,7 @@ def main() -> int:
         top_k=args.top_k,
         max_context_chars=args.max_context_chars,
     )
+    orchestrator.healthcheck()
 
     if args.query:
         _answer_once(orchestrator, args.query, args=args)

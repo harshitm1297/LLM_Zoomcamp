@@ -1,18 +1,19 @@
-# Cultural Mood Tracker
+# Pop Culture Detective
 
-Cultural Mood Tracker is an end-to-end LLM application for exploring how movies and television shows are described, rated, discussed, and received. A user can ask factual questions, request recommendations, compare titles, or ask why a title is attracting attention. The application routes each question through local SQL, retrieval-augmented generation (RAG), or a hybrid of both.
+Pop Culture Detective is an end-to-end RAG application for exploring movie and television descriptions. Every user question follows the same production path: vector retrieval from the local Chroma knowledge base, construction of a grounded prompt, and generation by a Groq-hosted LLM.
 
-The problem it solves is fragmentation: structured facts such as ratings and attention signals live separately from descriptions, reviews, and editorial coverage. The application combines both forms of evidence into one conversational interface while showing the SQL and retrieved chunks used for an answer.
+The application makes a small multi-source entertainment corpus searchable without expecting users to understand the underlying files. Answers expose their retrieved passages so users can inspect the evidence. The chatbot does not have SQL, recommendation, routing, or hybrid answer modes.
 
 All scraped and transformed data is stored locally. No hosted database is required.
 
 ## What you can ask
 
-- “What is the rating for Disclosure Day?” — local DuckDB
-- “What happens in Project Hail Mary?” — Chroma vector retrieval + LLM
-- “Why is Obsession popular?” — DuckDB analytics + retrieved text + LLM
-- “Compare Disclosure Day and Project Hail Mary.” — hybrid comparison
-- “Recommend a thoughtful science-fiction drama.” — SQL-ranked candidates with review evidence
+- “What happens in Project Hail Mary?”
+- “What themes appear in Obsession?”
+- “Which indexed title involves a scientist alone in space?”
+- “Compare the descriptions of Disclosure Day and Project Hail Mary.”
+
+Questions asking for facts absent from the retrieved passages should receive an explicit insufficient-context response rather than an invented answer.
 
 ## Architecture
 
@@ -22,16 +23,11 @@ flowchart LR
     B --> C[data/raw JSON]
     C --> D[Canonical transform]
     D --> E[data/processed JSONL]
-    E --> F[Local DuckDB]
     E --> G[SentenceTransformer embeddings]
     G --> H[Local ChromaDB]
-    I[Streamlit or CLI question] --> J[Query router]
-    J -->|structured| F
-    J -->|textual| H
-    J -->|hybrid| F
-    J -->|hybrid| H
-    F --> K[Grounded prompt]
-    H --> K
+    E --> F[Optional local DuckDB warehouse]
+    I[Streamlit or CLI question] --> H
+    H --> K[Grounded prompt]
     K --> L[Groq LLM]
     L --> M[Answer and evidence]
     M --> N[SQLite feedback and monitoring]
@@ -39,7 +35,7 @@ flowchart LR
 
 ### Technology choices
 
-- **DuckDB** stores and queries structured facts locally in one portable file.
+- **DuckDB** keeps a portable local copy of transformed tables for ingestion inspection; the chatbot does not query it.
 - **ChromaDB** stores the local vector index.
 - **BAAI/bge-small-en-v1.5** creates document and query embeddings.
 - **Groq** provides hosted LLM inference; only `GROQ_API_KEY` is required to generate answers.
@@ -48,9 +44,22 @@ flowchart LR
 
 ## Data
 
-The full extraction pipeline downloads data from TMDB, IMDb public datasets, TVMaze, Wikidata, Wikipedia Pageviews, Guardian Open Platform, and optional curated critic feeds. Generated files are written under `data/raw/<source>/<run_id>/`; canonical tables are written under `data/processed/<process_run_id>/`.
+The full extraction pipeline can download data from TMDB, IMDb public datasets, TVMaze, Wikidata, Wikipedia Pageviews, Guardian Open Platform, and optional curated critic feeds. Generated files are written under `data/raw/<source>/<run_id>/`; canonical tables are written under `data/processed/<process_run_id>/`.
 
-For reproducible review, the repository includes a deterministic sample-data generator with eight fictional or upcoming-title records. Reviewers do not need data-service credentials to build the local DuckDB and Chroma stores. The sample corpus is intentionally small and is for verifying the complete application flow, not for judging production-scale recommendation quality.
+For reproducible review, the repository includes a deterministic sample generator containing **8 titles: 6 movies and 2 TV series**. It creates **8 indexed passages**, one overview passage per title. Reviewers and end users do not need data-source credentials and do not need to scrape anything to run this demo corpus. `python scripts/bootstrap.py --sample` generates all required local files and the Chroma index.
+
+The larger corpus is not committed because its size and exact record count depend on the extraction date, API availability, deduplication, and the configured sample limits. The default full extraction requests up to 300 movies and 200 TV shows, but the final canonical count can be lower. A run manifest records the actual result.
+
+### Does an end user need to scrape data?
+
+No. The standard local, Docker, and Render quick starts use the deterministic bundled sample generator and make no calls to TMDB, IMDb, Guardian, or the other extraction sources. Scraping is an optional maintainer workflow for replacing the 8-title demo with a larger, fresher corpus. Only that optional workflow needs source API credentials such as `TMDB_API_KEY`.
+
+| Goal | Command | Scraping or source API keys? |
+|---|---|---|
+| Run the bundled 8-title demo | `python scripts/bootstrap.py --sample` | No |
+| Run the Docker demo | `docker compose --profile tools run --rm ingest` | No |
+| Start the Render deployment | Automatic sample bootstrap on an empty disk | No |
+| Build a larger live corpus | `python scripts/bootstrap.py` | Yes |
 
 The course FAQ corpus is not used.
 
@@ -73,7 +82,7 @@ Set a Groq key in `.env`:
 GROQ_API_KEY=your-groq-api-key
 ```
 
-Prepare DuckDB and Chroma from the included sample generator:
+Generate the included sample files, optional DuckDB warehouse, embeddings, and Chroma index:
 
 ```powershell
 python scripts\bootstrap.py --sample
@@ -151,7 +160,7 @@ python scripts\embed_document_chunks.py --process-run-id <process_run_id>
 python scripts\ingest_chroma.py --input-path data\processed\<process_run_id>\document_chunk_embeddings.jsonl
 ```
 
-Alternatively, run `python scripts\bootstrap.py` to execute extraction, transformation, local SQL loading, embedding, and Chroma ingestion in one command.
+Alternatively, run `python scripts\bootstrap.py` to execute extraction, transformation, local DuckDB materialization, embedding, and Chroma ingestion in one command.
 
 ## Configuration
 
@@ -165,7 +174,7 @@ Alternatively, run `python scripts\bootstrap.py` to execute extraction, transfor
 | `CHROMA_DB_PATH` | No | `chroma_db` | Persistent Chroma vector-store directory |
 | `PROCESS_RUN_ID` | No | newest valid run | Selects processed chunks |
 | `DOCUMENT_CHUNKS_PATH` | No | auto-discovered | Explicit canonical chunk file |
-| `RETRIEVAL_STRATEGY` | No | `vector` | `bm25`, `vector`, `vector_reranked`, or `hybrid` |
+| `RETRIEVAL_STRATEGY` | Evaluation only | `vector` | Strategy used by retrieval experiments; the chatbot always uses vector RAG |
 | `RETRIEVAL_TOP_K` | No | `5` | Context chunks returned |
 | `RETRIEVAL_CANDIDATE_K` | No | `20` | Candidates before reranking/fusion |
 | `ENABLE_QUERY_REWRITING` | No | `true` | Deterministic intent expansion |
@@ -186,7 +195,7 @@ The same `ApplicationRetriever` is used by the Streamlit application, retrieval 
 | Vector + reranking | **0.556** | **0.600** | **0.150** |
 | Hybrid vector + BM25 | **0.556** | **0.600** | 0.120 |
 
-MRR is the declared selection metric. Vector, reranked vector, and hybrid tied; plain vector is used in production because it achieved the best MRR with the least ranking complexity. Hybrid search and reranking remain available and are evaluated explicitly.
+MRR is the declared selection metric. Vector, reranked vector, and hybrid tied; plain vector is the only production chatbot strategy because it achieved the best MRR with the least ranking complexity. Hybrid search and reranking exist only as offline evaluation alternatives and are not exposed in the chat application.
 
 Reproduce the report:
 
@@ -215,7 +224,7 @@ The committed report includes per-question answers and metrics. Because LLM outp
 
 ## Monitoring and feedback
 
-Every interaction records route, latency, success/failure, retrieved chunk IDs, mean similarity, model and timestamp in local SQLite. The chat UI provides thumbs-up/down feedback. The dashboard contains:
+Every interaction records the RAG route, latency, success/failure, retrieved chunk IDs, mean similarity, model and timestamp in local SQLite. The chat UI provides thumbs-up/down feedback. The dashboard contains:
 
 1. requests over time;
 2. positive-feedback rate;
@@ -230,7 +239,7 @@ No prompt, answer, or feedback data is sent to a monitoring vendor.
 ## Other useful commands
 
 ```powershell
-# Unified CLI chat
+# RAG-only CLI chat
 python scripts\chat.py
 
 # Inspect retrieval using the production strategy
@@ -250,7 +259,7 @@ app.py                         Streamlit chat application
 pages/1_Monitoring.py          Monitoring dashboard
 scripts/                       User-facing command entry points
 src/cultural_mood_tracker/
-  chat/                        Routing, SQL, hybrid and answer orchestration
+  chat/                        RAG-only answer orchestration
   evaluation/                  Final-answer evaluation
   extract/ and sources/        Local data download
   load/                        Local DuckDB materialization
@@ -277,11 +286,11 @@ docker-compose.yml             Ingestion, chat and monitoring services
 | Monitoring | SQLite feedback plus seven dashboard sections |
 | Containerization | Full workflow in Docker Compose |
 | Reproducibility | Generated sample corpus, pinned versions and quick starts |
-| Best practices | Hybrid search, reranking and query rewriting |
+| Best practices | Offline hybrid/reranking evaluation and production query rewriting |
 
 ## Limitations
 
-- The included sample corpus is deliberately small; run the full extraction for meaningful breadth.
+- The included corpus contains only 8 titles (6 movies and 2 TV series); full extraction is optional but needed for meaningful breadth.
 - Generated answers require a Groq API key and network access.
 - The first embedding run downloads the public BGE model and is slower than subsequent runs.
 - Automated metrics do not replace human review of factuality and recommendation quality.
