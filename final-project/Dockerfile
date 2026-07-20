@@ -17,12 +17,13 @@ RUN pip install --no-cache-dir --upgrade pip \
 COPY . .
 RUN useradd --create-home --uid 10001 appuser \
     && mkdir -p /app/data /app/chroma_db /app/.cache/huggingface \
-    && chown -R appuser:appuser /app
+    && chown -R appuser:appuser /app \
+    && chmod +x /app/docker-entrypoint.sh
 
-USER appuser
+ENTRYPOINT ["/app/docker-entrypoint.sh"]
 EXPOSE 8501
 
 HEALTHCHECK --interval=30s --timeout=5s --start-period=30s --retries=3 \
-    CMD curl --fail http://localhost:8501/_stcore/health || exit 1
+    CMD curl --fail "http://localhost:${PORT:-8501}/_stcore/health" || exit 1
 
 CMD ["streamlit", "run", "app.py", "--server.address=0.0.0.0", "--server.port=8501"]

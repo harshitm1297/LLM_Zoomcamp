@@ -7,6 +7,7 @@ services:
       - "8501:8501"
     environment: &application-environment
       LOCAL_DUCKDB_PATH: data/warehouse/cultural_mood_tracker.duckdb
+      CHROMA_DB_PATH: chroma_db
       PROCESS_RUN_ID: sample
       RETRIEVAL_STRATEGY: vector
       RETRIEVAL_TOP_K: 5
@@ -52,6 +53,8 @@ services:
     image: cultural-mood-tracker:local
     build: .
     user: "0:0"
+    environment:
+      CONTAINER_RUN_AS_ROOT: "true"
     command: ["sh", "-c", "chown -R 10001:10001 /app/data /app/chroma_db /app/.cache/huggingface && chmod -R u+rwX /app/data /app/chroma_db /app/.cache/huggingface"]
     volumes: *application-volumes
     restart: "no"

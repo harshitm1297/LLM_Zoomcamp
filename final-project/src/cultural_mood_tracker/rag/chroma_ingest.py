@@ -2,13 +2,14 @@ from __future__ import annotations
 
 import json
 import logging
+import os
 from collections.abc import Iterable, Iterator
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
 
 
-DEFAULT_CHROMA_DB_DIR = "chroma_db"
+DEFAULT_CHROMA_DB_DIR = os.getenv("CHROMA_DB_PATH", "chroma_db").strip() or "chroma_db"
 DEFAULT_CHROMA_COLLECTION = "movie_chunks"
 LOGGER = logging.getLogger(__name__)
 

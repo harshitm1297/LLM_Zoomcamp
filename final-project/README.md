@@ -107,6 +107,29 @@ docker compose up --build
 
 The Compose stack uses Docker-managed local volumes for `data/`, `chroma_db/`, and the reusable model cache. This keeps the non-root container portable across Windows, macOS, and Linux. No external database container or account is needed.
 
+## Cloud deployment: Render
+
+The submission repository includes a Render Blueprint at its root. It deploys this
+project as one Docker web service, with the chat and monitoring page served by the
+same Streamlit process. A persistent disk stores DuckDB, Chroma, feedback, and the
+downloaded model cache. On an empty disk, `scripts/start_cloud.py` bootstraps the
+small public sample corpus before starting Streamlit; later restarts reuse the
+existing data.
+
+1. Sign in to Render and choose **New > Blueprint**.
+2. Connect `https://github.com/harshitm1297/LLM_Zoomcamp`.
+3. Keep the default Blueprint path, `render.yaml`.
+4. Enter `GROQ_API_KEY` when Render prompts for the secret value.
+5. Review the paid Starter service and 5 GB persistent disk, then apply the Blueprint.
+6. Wait for `/_stcore/health` to pass and open the generated `onrender.com` URL.
+7. Open the **Monitoring** page from Streamlit's navigation to inspect feedback and charts.
+
+The service listens on Render's injected `PORT`. Only paths below `/app/data` are
+persistent. To use the full live corpus instead of the sample, run the extraction
+locally and transfer the resulting local data to the attached disk, or replace the
+sample bootstrap with a controlled ingestion workflow that has the required source
+API keys.
+
 ## Full local data pipeline
 
 To download and transform the real multi-source corpus, configure at least `TMDB_API_KEY` in `.env`, then run:
@@ -139,6 +162,7 @@ Alternatively, run `python scripts\bootstrap.py` to execute extraction, transfor
 | `GUARDIAN_API_KEY` | No | `test` | Guardian editorial search |
 | `LOCAL_DATA_ROOT` | No | `data` | Root for raw, processed, reports and warehouse files |
 | `LOCAL_DUCKDB_PATH` | No | `data/warehouse/cultural_mood_tracker.duckdb` | Structured local database |
+| `CHROMA_DB_PATH` | No | `chroma_db` | Persistent Chroma vector-store directory |
 | `PROCESS_RUN_ID` | No | newest valid run | Selects processed chunks |
 | `DOCUMENT_CHUNKS_PATH` | No | auto-discovered | Explicit canonical chunk file |
 | `RETRIEVAL_STRATEGY` | No | `vector` | `bm25`, `vector`, `vector_reranked`, or `hybrid` |
