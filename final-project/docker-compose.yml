@@ -1,0 +1,62 @@
+services:
+  app:
+    image: cultural-mood-tracker:local
+    build: .
+    command: ["streamlit", "run", "app.py", "--server.address=0.0.0.0", "--server.port=8501"]
+    ports:
+      - "8501:8501"
+    environment: &application-environment
+      LOCAL_DUCKDB_PATH: data/warehouse/cultural_mood_tracker.duckdb
+      PROCESS_RUN_ID: sample
+      RETRIEVAL_STRATEGY: vector
+      RETRIEVAL_TOP_K: 5
+      RETRIEVAL_CANDIDATE_K: 20
+      ENABLE_QUERY_REWRITING: "true"
+      OBSERVABILITY_DB_PATH: data/monitoring/observability.db
+      PROMPT_VARIANT: strict
+      GROQ_API_KEY: ${GROQ_API_KEY:-}
+    volumes: &application-volumes
+      - app-data:/app/data
+      - chroma-data:/app/chroma_db
+      - model-cache:/app/.cache/huggingface
+    depends_on:
+      init-volumes:
+        condition: service_completed_successfully
+    restart: unless-stopped
+
+  monitoring:
+    image: cultural-mood-tracker:local
+    build: .
+    command: ["streamlit", "run", "pages/1_Monitoring.py", "--server.address=0.0.0.0", "--server.port=8502"]
+    ports:
+      - "8502:8502"
+    environment: *application-environment
+    volumes: *application-volumes
+    depends_on:
+      init-volumes:
+        condition: service_completed_successfully
+    restart: unless-stopped
+
+  ingest:
+    image: cultural-mood-tracker:local
+    build: .
+    command: ["python", "scripts/bootstrap.py", "--sample"]
+    environment: *application-environment
+    volumes: *application-volumes
+    depends_on:
+      init-volumes:
+        condition: service_completed_successfully
+    profiles: ["tools"]
+
+  init-volumes:
+    image: cultural-mood-tracker:local
+    build: .
+    user: "0:0"
+    command: ["sh", "-c", "chown -R 10001:10001 /app/data /app/chroma_db /app/.cache/huggingface && chmod -R u+rwX /app/data /app/chroma_db /app/.cache/huggingface"]
+    volumes: *application-volumes
+    restart: "no"
+
+volumes:
+  app-data:
+  chroma-data:
+  model-cache:

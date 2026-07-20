@@ -1,0 +1,269 @@
+{
+  "configurations": {
+    "baseline": {
+      "configuration": {
+        "prompt_variant": "baseline",
+        "model_name": "llama-3.1-8b-instant",
+        "max_context_chars": 3000,
+        "temperature": 0.2
+      },
+      "aggregate": {
+        "fact_coverage": 0.6666666666666666,
+        "grounding_overlap": 0.37975964579380134,
+        "refusal_correctness": 0.8333333333333334,
+        "composite_score": 0.6139278937381404,
+        "mean_latency_ms": 812.7031166659435
+      },
+      "per_case": [
+        {
+          "query_id": "rag_01",
+          "question": "What happens in Disclosure Day?",
+          "category": "rag",
+          "answer": "According to the context, in the movie or TV series \"Disclosure Day,\" a whistleblower uncovers evidence of extraterrestrial life and exposes a corporate and government cover-up.",
+          "retrieved_chunk_ids": [
+            "movie_1275779:tmdb_overview:chunk_001",
+            "tv_sample_obsession:tmdb_overview:chunk_001",
+            "movie_sample_leviticus:tmdb_overview:chunk_001",
+            "movie_1020047:tmdb_overview:chunk_001",
+            "movie_1288341:tmdb_overview:chunk_001"
+          ],
+          "latency_ms": 3670.3094000040437,
+          "fact_coverage": 1.0,
+          "grounding_overlap": 0.5882352941176471,
+          "refusal_correctness": 1.0,
+          "refused": false,
+          "composite_score": 0.8764705882352941
+        },
+        {
+          "query_id": "rag_02",
+          "question": "Describe the central problem in Project Hail Mary.",
+          "category": "rag",
+          "answer": "The central problem in Project Hail Mary is a stellar crisis that threatens the Sun and humanity.",
+          "retrieved_chunk_ids": [
+            "movie_sample_leviticus:tmdb_overview:chunk_001",
+            "movie_687163:tmdb_overview:chunk_001",
+            "movie_1020047:tmdb_overview:chunk_001",
+            "tv_sample_obsession:tmdb_overview:chunk_001",
+            "movie_1275779:tmdb_overview:chunk_001"
+          ],
+          "latency_ms": 153.09159999742405,
+          "fact_coverage": 0.0,
+          "grounding_overlap": 0.4,
+          "refusal_correctness": 1.0,
+          "refused": false,
+          "composite_score": 0.32
+        },
+        {
+          "query_id": "rag_03",
+          "question": "What is Dexter searching for after waking from a coma?",
+          "category": "rag",
+          "answer": "According to the context, after waking from a coma, Dexter is searching for his missing son.",
+          "retrieved_chunk_ids": [
+            "tv_259909:tmdb_overview:chunk_001",
+            "movie_687163:tmdb_overview:chunk_001",
+            "movie_1275779:tmdb_overview:chunk_001",
+            "tv_sample_obsession:tmdb_overview:chunk_001",
+            "movie_sample_leviticus:tmdb_overview:chunk_001"
+          ],
+          "latency_ms": 220.4215999954613,
+          "fact_coverage": 0.5,
+          "grounding_overlap": 0.7,
+          "refusal_correctness": 1.0,
+          "refused": false,
+          "composite_score": 0.6599999999999999
+        },
+        {
+          "query_id": "rag_04",
+          "question": "Why does the former assassin fight in Seven Snipers?",
+          "category": "rag",
+          "answer": "The context is insufficient to provide a detailed reason for the former assassin's fight in Seven Snipers. However, it does mention that she is protecting her daughter from a warlord who once held her captive. This suggests that the warlord is a primary antagonist and the former assassin is fighting to protect her child from this individual.",
+          "retrieved_chunk_ids": [
+            "movie_1288341:tmdb_overview:chunk_001",
+            "movie_sample_leviticus:tmdb_overview:chunk_001",
+            "movie_1275779:tmdb_overview:chunk_001",
+            "tv_259909:tmdb_overview:chunk_001",
+            "movie_1020047:tmdb_overview:chunk_001"
+          ],
+          "latency_ms": 323.0069000055664,
+          "fact_coverage": 0.5,
+          "grounding_overlap": 0.2903225806451613,
+          "refusal_correctness": 1.0,
+          "refused": false,
+          "composite_score": 0.5370967741935484
+        },
+        {
+          "query_id": "rag_05",
+          "question": "What triggers the mystery in In the Hand of Dante?",
+          "category": "rag",
+          "answer": "The context provided does not explicitly state what triggers the mystery in \"In the Hand of Dante.\" However, it does mention that a rare medieval manuscript is stolen from the Vatican shortly after experts authenticate it. This event seems to be the catalyst for the mystery, but the exact trigger is not specified.",
+          "retrieved_chunk_ids": [
+            "movie_1020047:tmdb_overview:chunk_001",
+            "movie_sample_leviticus:tmdb_overview:chunk_001",
+            "tv_sample_obsession:tmdb_overview:chunk_001",
+            "tv_259909:tmdb_overview:chunk_001",
+            "movie_1288341:tmdb_overview:chunk_001"
+          ],
+          "latency_ms": 300.57709999528015,
+          "fact_coverage": 1.0,
+          "grounding_overlap": 0.3,
+          "refusal_correctness": 1.0,
+          "refused": false,
+          "composite_score": 0.79
+        },
+        {
+          "query_id": "rag_unanswerable_01",
+          "question": "Who composed the soundtrack for Disclosure Day?",
+          "category": "unanswerable",
+          "answer": "Unfortunately, the context provided does not mention who composed the soundtrack for Disclosure Day.",
+          "retrieved_chunk_ids": [
+            "movie_1275779:tmdb_overview:chunk_001",
+            "tv_sample_obsession:tmdb_overview:chunk_001",
+            "movie_sample_leviticus:tmdb_overview:chunk_001",
+            "movie_687163:tmdb_overview:chunk_001",
+            "tv_259909:tmdb_overview:chunk_001"
+          ],
+          "latency_ms": 208.81209999788553,
+          "fact_coverage": 1.0,
+          "grounding_overlap": 0.0,
+          "refusal_correctness": 0.0,
+          "refused": false,
+          "composite_score": 0.5
+        }
+      ]
+    },
+    "strict": {
+      "configuration": {
+        "prompt_variant": "strict",
+        "model_name": "llama-3.1-8b-instant",
+        "max_context_chars": 6000,
+        "temperature": 0.0
+      },
+      "aggregate": {
+        "fact_coverage": 0.8611111111111112,
+        "grounding_overlap": 0.4198348694316436,
+        "refusal_correctness": 0.8333333333333334,
+        "composite_score": 0.7231726830517152,
+        "mean_latency_ms": 4066.674600000018
+      },
+      "per_case": [
+        {
+          "query_id": "rag_01",
+          "question": "What happens in Disclosure Day?",
+          "category": "rag",
+          "answer": "According to the context [1], in Disclosure Day, a whistleblower uncovers evidence of extraterrestrial life and exposes a corporate and government cover-up.",
+          "retrieved_chunk_ids": [
+            "movie_1275779:tmdb_overview:chunk_001",
+            "tv_sample_obsession:tmdb_overview:chunk_001",
+            "movie_sample_leviticus:tmdb_overview:chunk_001",
+            "movie_1020047:tmdb_overview:chunk_001",
+            "movie_1288341:tmdb_overview:chunk_001"
+          ],
+          "latency_ms": 198.40079999994487,
+          "fact_coverage": 1.0,
+          "grounding_overlap": 0.6666666666666666,
+          "refusal_correctness": 1.0,
+          "refused": false,
+          "composite_score": 0.8999999999999999
+        },
+        {
+          "query_id": "rag_02",
+          "question": "Describe the central problem in Project Hail Mary.",
+          "category": "rag",
+          "answer": "The central problem in Project Hail Mary is a stellar crisis that threatens the Sun and humanity. This is stated in the context [2] Project Hail Mary — sample/overview, published 2026-03-20T00:00:00Z, which says: \"A scientist wakes alone in space with amnesia and must solve a stellar crisis to save the Sun and humanity.\"",
+          "retrieved_chunk_ids": [
+            "movie_sample_leviticus:tmdb_overview:chunk_001",
+            "movie_687163:tmdb_overview:chunk_001",
+            "movie_1020047:tmdb_overview:chunk_001",
+            "tv_sample_obsession:tmdb_overview:chunk_001",
+            "movie_1275779:tmdb_overview:chunk_001"
+          ],
+          "latency_ms": 7380.161599998246,
+          "fact_coverage": 1.0,
+          "grounding_overlap": 0.375,
+          "refusal_correctness": 1.0,
+          "refused": false,
+          "composite_score": 0.8125
+        },
+        {
+          "query_id": "rag_03",
+          "question": "What is Dexter searching for after waking from a coma?",
+          "category": "rag",
+          "answer": "According to the context [1] Dexter: Resurrection, after waking from a coma, Dexter is searching for his missing son.",
+          "retrieved_chunk_ids": [
+            "tv_259909:tmdb_overview:chunk_001",
+            "movie_687163:tmdb_overview:chunk_001",
+            "movie_1275779:tmdb_overview:chunk_001",
+            "tv_sample_obsession:tmdb_overview:chunk_001",
+            "movie_sample_leviticus:tmdb_overview:chunk_001"
+          ],
+          "latency_ms": 184.4917999987956,
+          "fact_coverage": 0.5,
+          "grounding_overlap": 0.5833333333333334,
+          "refusal_correctness": 1.0,
+          "refused": false,
+          "composite_score": 0.625
+        },
+        {
+          "query_id": "rag_04",
+          "question": "Why does the former assassin fight in Seven Snipers?",
+          "category": "rag",
+          "answer": "The context does not explicitly state why the former assassin fights in Seven Snipers. It only mentions that a former assassin protects her daughter from the warlord who once held her captive [1]. There is no information about the assassin's motivations or actions beyond protecting her daughter.",
+          "retrieved_chunk_ids": [
+            "movie_1288341:tmdb_overview:chunk_001",
+            "movie_sample_leviticus:tmdb_overview:chunk_001",
+            "movie_1275779:tmdb_overview:chunk_001",
+            "tv_259909:tmdb_overview:chunk_001",
+            "movie_1020047:tmdb_overview:chunk_001"
+          ],
+          "latency_ms": 8303.69349999819,
+          "fact_coverage": 1.0,
+          "grounding_overlap": 0.3225806451612903,
+          "refusal_correctness": 1.0,
+          "refused": false,
+          "composite_score": 0.7967741935483872
+        },
+        {
+          "query_id": "rag_05",
+          "question": "What triggers the mystery in In the Hand of Dante?",
+          "category": "rag",
+          "answer": "The mystery in In the Hand of Dante is triggered by the theft of a rare medieval manuscript from the Vatican shortly after experts authenticate it [1].",
+          "retrieved_chunk_ids": [
+            "movie_1020047:tmdb_overview:chunk_001",
+            "movie_sample_leviticus:tmdb_overview:chunk_001",
+            "tv_sample_obsession:tmdb_overview:chunk_001",
+            "tv_259909:tmdb_overview:chunk_001",
+            "movie_1288341:tmdb_overview:chunk_001"
+          ],
+          "latency_ms": 4168.605899998511,
+          "fact_coverage": 0.6666666666666666,
+          "grounding_overlap": 0.5714285714285714,
+          "refusal_correctness": 1.0,
+          "refused": false,
+          "composite_score": 0.7047619047619047
+        },
+        {
+          "query_id": "rag_unanswerable_01",
+          "question": "Who composed the soundtrack for Disclosure Day?",
+          "category": "unanswerable",
+          "answer": "Unfortunately, the provided context does not contain any information about the soundtrack for Disclosure Day.",
+          "retrieved_chunk_ids": [
+            "movie_1275779:tmdb_overview:chunk_001",
+            "tv_sample_obsession:tmdb_overview:chunk_001",
+            "movie_sample_leviticus:tmdb_overview:chunk_001",
+            "movie_687163:tmdb_overview:chunk_001",
+            "tv_259909:tmdb_overview:chunk_001"
+          ],
+          "latency_ms": 4164.6940000064205,
+          "fact_coverage": 1.0,
+          "grounding_overlap": 0.0,
+          "refusal_correctness": 0.0,
+          "refused": false,
+          "composite_score": 0.5
+        }
+      ]
+    }
+  },
+  "selection_metric": "composite_score",
+  "best_configuration": "strict",
+  "best_score": 0.7231726830517152
+}

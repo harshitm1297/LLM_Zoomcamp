@@ -1,0 +1,1948 @@
+{
+  "approaches": {
+    "bm25": {
+      "strategy": "bm25",
+      "num_queries": 15,
+      "k_values": [
+        1,
+        3,
+        5,
+        10
+      ],
+      "aggregate": {
+        "mrr": 0.4,
+        "recall_at_k": {
+          "1": 0.4,
+          "3": 0.4,
+          "5": 0.4,
+          "10": 0.4
+        },
+        "precision_at_k": {
+          "1": 0.4,
+          "3": 0.13333333333333333,
+          "5": 0.08333333333333333,
+          "10": 0.058333333333333334
+        },
+        "mean_latency_ms": 2.879660000326112
+      },
+      "per_query": [
+        {
+          "query_id": "gs_easy_01",
+          "query": "Disclosure Day",
+          "difficulty": "easy",
+          "relevant_chunk_ids": [
+            "movie_1275779:tmdb_overview:chunk_001"
+          ],
+          "retrieved_chunk_ids": [],
+          "reciprocal_rank": 0.0,
+          "recall_at_k": {
+            "1": 0.0,
+            "3": 0.0,
+            "5": 0.0,
+            "10": 0.0
+          },
+          "precision_at_k": {
+            "1": 0.0,
+            "3": 0.0,
+            "5": 0.0,
+            "10": 0.0
+          },
+          "latency_ms": 42.600900000252295
+        },
+        {
+          "query_id": "gs_easy_02",
+          "query": "Project Hail Mary",
+          "difficulty": "easy",
+          "relevant_chunk_ids": [
+            "movie_687163:tmdb_overview:chunk_001"
+          ],
+          "retrieved_chunk_ids": [],
+          "reciprocal_rank": 0.0,
+          "recall_at_k": {
+            "1": 0.0,
+            "3": 0.0,
+            "5": 0.0,
+            "10": 0.0
+          },
+          "precision_at_k": {
+            "1": 0.0,
+            "3": 0.0,
+            "5": 0.0,
+            "10": 0.0
+          },
+          "latency_ms": 0.027599999157246202
+        },
+        {
+          "query_id": "gs_easy_03",
+          "query": "Dexter: Resurrection",
+          "difficulty": "easy",
+          "relevant_chunk_ids": [
+            "tv_259909:tmdb_overview:chunk_001"
+          ],
+          "retrieved_chunk_ids": [],
+          "reciprocal_rank": 0.0,
+          "recall_at_k": {
+            "1": 0.0,
+            "3": 0.0,
+            "5": 0.0,
+            "10": 0.0
+          },
+          "precision_at_k": {
+            "1": 0.0,
+            "3": 0.0,
+            "5": 0.0,
+            "10": 0.0
+          },
+          "latency_ms": 0.011999996786471456
+        },
+        {
+          "query_id": "gs_hard_01",
+          "query": "a whistleblower exposes a corporate cover-up about extraterrestrial life",
+          "difficulty": "hard",
+          "relevant_chunk_ids": [
+            "movie_1275779:tmdb_overview:chunk_001"
+          ],
+          "retrieved_chunk_ids": [
+            "movie_1275779:tmdb_overview:chunk_001",
+            "tv_sample_obsession:tmdb_overview:chunk_001",
+            "tv_259909:tmdb_overview:chunk_001",
+            "movie_1398050:tmdb_overview:chunk_001",
+            "movie_687163:tmdb_overview:chunk_001",
+            "movie_sample_leviticus:tmdb_overview:chunk_001",
+            "movie_1020047:tmdb_overview:chunk_001",
+            "movie_1288341:tmdb_overview:chunk_001"
+          ],
+          "reciprocal_rank": 1.0,
+          "recall_at_k": {
+            "1": 1.0,
+            "3": 1.0,
+            "5": 1.0,
+            "10": 1.0
+          },
+          "precision_at_k": {
+            "1": 1.0,
+            "3": 0.3333333333333333,
+            "5": 0.2,
+            "10": 0.125
+          },
+          "latency_ms": 0.06379999831551686
+        },
+        {
+          "query_id": "gs_hard_02",
+          "query": "a scientist wakes up alone in space with amnesia and has to save the sun",
+          "difficulty": "hard",
+          "relevant_chunk_ids": [
+            "movie_687163:tmdb_overview:chunk_001"
+          ],
+          "retrieved_chunk_ids": [
+            "movie_687163:tmdb_overview:chunk_001",
+            "movie_1398050:tmdb_overview:chunk_001",
+            "movie_1275779:tmdb_overview:chunk_001",
+            "movie_1020047:tmdb_overview:chunk_001",
+            "movie_1288341:tmdb_overview:chunk_001",
+            "movie_sample_leviticus:tmdb_overview:chunk_001",
+            "tv_sample_obsession:tmdb_overview:chunk_001",
+            "tv_259909:tmdb_overview:chunk_001"
+          ],
+          "reciprocal_rank": 1.0,
+          "recall_at_k": {
+            "1": 1.0,
+            "3": 1.0,
+            "5": 1.0,
+            "10": 1.0
+          },
+          "precision_at_k": {
+            "1": 1.0,
+            "3": 0.3333333333333333,
+            "5": 0.2,
+            "10": 0.125
+          },
+          "latency_ms": 0.05819999933009967
+        },
+        {
+          "query_id": "gs_hard_03",
+          "query": "an ex-assassin protects her daughter from the warlord who once held her captive",
+          "difficulty": "hard",
+          "relevant_chunk_ids": [
+            "movie_1288341:tmdb_overview:chunk_001"
+          ],
+          "retrieved_chunk_ids": [
+            "movie_1288341:tmdb_overview:chunk_001",
+            "movie_1020047:tmdb_overview:chunk_001",
+            "tv_259909:tmdb_overview:chunk_001",
+            "movie_687163:tmdb_overview:chunk_001"
+          ],
+          "reciprocal_rank": 1.0,
+          "recall_at_k": {
+            "1": 1.0,
+            "3": 1.0,
+            "5": 1.0,
+            "10": 1.0
+          },
+          "precision_at_k": {
+            "1": 1.0,
+            "3": 0.3333333333333333,
+            "5": 0.25,
+            "10": 0.25
+          },
+          "latency_ms": 0.03879999712808058
+        },
+        {
+          "query_id": "gs_hard_04",
+          "query": "teenagers steal a car and road-trip to reunite a heartbroken friend with his college girlfriend",
+          "difficulty": "hard",
+          "relevant_chunk_ids": [
+            "movie_1398050:tmdb_overview:chunk_001"
+          ],
+          "retrieved_chunk_ids": [
+            "movie_1398050:tmdb_overview:chunk_001",
+            "movie_687163:tmdb_overview:chunk_001",
+            "tv_259909:tmdb_overview:chunk_001",
+            "movie_1275779:tmdb_overview:chunk_001",
+            "movie_sample_leviticus:tmdb_overview:chunk_001",
+            "tv_sample_obsession:tmdb_overview:chunk_001",
+            "movie_1020047:tmdb_overview:chunk_001",
+            "movie_1288341:tmdb_overview:chunk_001"
+          ],
+          "reciprocal_rank": 1.0,
+          "recall_at_k": {
+            "1": 1.0,
+            "3": 1.0,
+            "5": 1.0,
+            "10": 1.0
+          },
+          "precision_at_k": {
+            "1": 1.0,
+            "3": 0.3333333333333333,
+            "5": 0.2,
+            "10": 0.125
+          },
+          "latency_ms": 0.054600001021754
+        },
+        {
+          "query_id": "gs_hard_05",
+          "query": "a rare medieval manuscript is stolen from the Vatican after being authenticated",
+          "difficulty": "hard",
+          "relevant_chunk_ids": [
+            "movie_1020047:tmdb_overview:chunk_001"
+          ],
+          "retrieved_chunk_ids": [
+            "movie_1020047:tmdb_overview:chunk_001",
+            "tv_259909:tmdb_overview:chunk_001",
+            "movie_1288341:tmdb_overview:chunk_001",
+            "movie_687163:tmdb_overview:chunk_001",
+            "tv_sample_obsession:tmdb_overview:chunk_001",
+            "movie_1275779:tmdb_overview:chunk_001",
+            "movie_1398050:tmdb_overview:chunk_001",
+            "movie_sample_leviticus:tmdb_overview:chunk_001"
+          ],
+          "reciprocal_rank": 1.0,
+          "recall_at_k": {
+            "1": 1.0,
+            "3": 1.0,
+            "5": 1.0,
+            "10": 1.0
+          },
+          "precision_at_k": {
+            "1": 1.0,
+            "3": 0.3333333333333333,
+            "5": 0.2,
+            "10": 0.125
+          },
+          "latency_ms": 0.04230000195093453
+        },
+        {
+          "query_id": "gs_hard_06",
+          "query": "a CIA analyst teams up with intelligence allies to stop a rogue black-ops conspiracy",
+          "difficulty": "hard",
+          "relevant_chunk_ids": [
+            "movie_1380291:tmdb_overview:chunk_001"
+          ],
+          "retrieved_chunk_ids": [
+            "movie_1398050:tmdb_overview:chunk_001",
+            "movie_687163:tmdb_overview:chunk_001",
+            "movie_1275779:tmdb_overview:chunk_001",
+            "tv_sample_obsession:tmdb_overview:chunk_001",
+            "tv_259909:tmdb_overview:chunk_001",
+            "movie_sample_leviticus:tmdb_overview:chunk_001",
+            "movie_1020047:tmdb_overview:chunk_001",
+            "movie_1288341:tmdb_overview:chunk_001"
+          ],
+          "reciprocal_rank": 0.0,
+          "recall_at_k": {
+            "1": 0.0,
+            "3": 0.0,
+            "5": 0.0,
+            "10": 0.0
+          },
+          "precision_at_k": {
+            "1": 0.0,
+            "3": 0.0,
+            "5": 0.0,
+            "10": 0.0
+          },
+          "latency_ms": 0.04410000110510737
+        },
+        {
+          "query_id": "gs_hard_07",
+          "query": "a big-city doctor moves to a small coastal town and clashes with the quirky local residents",
+          "difficulty": "hard",
+          "relevant_chunk_ids": [
+            "tv_291084:tmdb_overview:chunk_001"
+          ],
+          "retrieved_chunk_ids": [
+            "movie_687163:tmdb_overview:chunk_001",
+            "movie_1398050:tmdb_overview:chunk_001",
+            "movie_1020047:tmdb_overview:chunk_001",
+            "movie_1288341:tmdb_overview:chunk_001",
+            "movie_1275779:tmdb_overview:chunk_001",
+            "movie_sample_leviticus:tmdb_overview:chunk_001",
+            "tv_sample_obsession:tmdb_overview:chunk_001",
+            "tv_259909:tmdb_overview:chunk_001"
+          ],
+          "reciprocal_rank": 0.0,
+          "recall_at_k": {
+            "1": 0.0,
+            "3": 0.0,
+            "5": 0.0,
+            "10": 0.0
+          },
+          "precision_at_k": {
+            "1": 0.0,
+            "3": 0.0,
+            "5": 0.0,
+            "10": 0.0
+          },
+          "latency_ms": 0.04739999712910503
+        },
+        {
+          "query_id": "gs_hard_08",
+          "query": "a former slave rises to power running gladiator games in ancient Rome",
+          "difficulty": "hard",
+          "relevant_chunk_ids": [
+            "tv_240459:tmdb_overview:chunk_001"
+          ],
+          "retrieved_chunk_ids": [
+            "movie_687163:tmdb_overview:chunk_001",
+            "movie_1288341:tmdb_overview:chunk_001",
+            "movie_1398050:tmdb_overview:chunk_001",
+            "tv_sample_obsession:tmdb_overview:chunk_001",
+            "movie_1275779:tmdb_overview:chunk_001",
+            "tv_259909:tmdb_overview:chunk_001",
+            "movie_sample_leviticus:tmdb_overview:chunk_001",
+            "movie_1020047:tmdb_overview:chunk_001"
+          ],
+          "reciprocal_rank": 0.0,
+          "recall_at_k": {
+            "1": 0.0,
+            "3": 0.0,
+            "5": 0.0,
+            "10": 0.0
+          },
+          "precision_at_k": {
+            "1": 0.0,
+            "3": 0.0,
+            "5": 0.0,
+            "10": 0.0
+          },
+          "latency_ms": 0.04159999662078917
+        },
+        {
+          "query_id": "gs_hard_09",
+          "query": "residents of a retirement community band together to fight an otherworldly threat",
+          "difficulty": "hard",
+          "relevant_chunk_ids": [
+            "tv_224941:tmdb_overview:chunk_001"
+          ],
+          "retrieved_chunk_ids": [
+            "movie_1275779:tmdb_overview:chunk_001",
+            "movie_1398050:tmdb_overview:chunk_001",
+            "movie_687163:tmdb_overview:chunk_001",
+            "tv_sample_obsession:tmdb_overview:chunk_001",
+            "tv_259909:tmdb_overview:chunk_001",
+            "movie_sample_leviticus:tmdb_overview:chunk_001",
+            "movie_1020047:tmdb_overview:chunk_001",
+            "movie_1288341:tmdb_overview:chunk_001"
+          ],
+          "reciprocal_rank": 0.0,
+          "recall_at_k": {
+            "1": 0.0,
+            "3": 0.0,
+            "5": 0.0,
+            "10": 0.0
+          },
+          "precision_at_k": {
+            "1": 0.0,
+            "3": 0.0,
+            "5": 0.0,
+            "10": 0.0
+          },
+          "latency_ms": 0.03890000516548753
+        },
+        {
+          "query_id": "gs_hard_10",
+          "query": "a young detective's first murder case reveals a globe-trotting conspiracy",
+          "difficulty": "hard",
+          "relevant_chunk_ids": [
+            "tv_255661:tmdb_overview:chunk_001"
+          ],
+          "retrieved_chunk_ids": [
+            "tv_sample_obsession:tmdb_overview:chunk_001",
+            "movie_1275779:tmdb_overview:chunk_001",
+            "tv_259909:tmdb_overview:chunk_001",
+            "movie_1398050:tmdb_overview:chunk_001",
+            "movie_687163:tmdb_overview:chunk_001",
+            "movie_sample_leviticus:tmdb_overview:chunk_001",
+            "movie_1020047:tmdb_overview:chunk_001",
+            "movie_1288341:tmdb_overview:chunk_001"
+          ],
+          "reciprocal_rank": 0.0,
+          "recall_at_k": {
+            "1": 0.0,
+            "3": 0.0,
+            "5": 0.0,
+            "10": 0.0
+          },
+          "precision_at_k": {
+            "1": 0.0,
+            "3": 0.0,
+            "5": 0.0,
+            "10": 0.0
+          },
+          "latency_ms": 0.03680000372696668
+        },
+        {
+          "query_id": "gs_hard_11",
+          "query": "a serial killer wakes from a coma and searches New York City for his missing son",
+          "difficulty": "hard",
+          "relevant_chunk_ids": [
+            "tv_259909:tmdb_overview:chunk_001"
+          ],
+          "retrieved_chunk_ids": [
+            "tv_259909:tmdb_overview:chunk_001",
+            "movie_687163:tmdb_overview:chunk_001",
+            "movie_1398050:tmdb_overview:chunk_001",
+            "movie_1020047:tmdb_overview:chunk_001",
+            "movie_1288341:tmdb_overview:chunk_001",
+            "movie_1275779:tmdb_overview:chunk_001",
+            "movie_sample_leviticus:tmdb_overview:chunk_001",
+            "tv_sample_obsession:tmdb_overview:chunk_001"
+          ],
+          "reciprocal_rank": 1.0,
+          "recall_at_k": {
+            "1": 1.0,
+            "3": 1.0,
+            "5": 1.0,
+            "10": 1.0
+          },
+          "precision_at_k": {
+            "1": 1.0,
+            "3": 0.3333333333333333,
+            "5": 0.2,
+            "10": 0.125
+          },
+          "latency_ms": 0.04890000127488747
+        },
+        {
+          "query_id": "gs_hard_12",
+          "query": "a ranching family starts over in South Texas while fighting off a rival operation",
+          "difficulty": "hard",
+          "relevant_chunk_ids": [
+            "tv_299167:tmdb_overview:chunk_001"
+          ],
+          "retrieved_chunk_ids": [
+            "movie_sample_leviticus:tmdb_overview:chunk_001",
+            "tv_259909:tmdb_overview:chunk_001",
+            "movie_687163:tmdb_overview:chunk_001",
+            "tv_sample_obsession:tmdb_overview:chunk_001",
+            "movie_1275779:tmdb_overview:chunk_001",
+            "movie_1398050:tmdb_overview:chunk_001",
+            "movie_1020047:tmdb_overview:chunk_001",
+            "movie_1288341:tmdb_overview:chunk_001"
+          ],
+          "reciprocal_rank": 0.0,
+          "recall_at_k": {
+            "1": 0.0,
+            "3": 0.0,
+            "5": 0.0,
+            "10": 0.0
+          },
+          "precision_at_k": {
+            "1": 0.0,
+            "3": 0.0,
+            "5": 0.0,
+            "10": 0.0
+          },
+          "latency_ms": 0.039000005926936865
+        }
+      ]
+    },
+    "vector": {
+      "strategy": "vector",
+      "num_queries": 15,
+      "k_values": [
+        1,
+        3,
+        5,
+        10
+      ],
+      "aggregate": {
+        "mrr": 0.5555555555555556,
+        "recall_at_k": {
+          "1": 0.5333333333333333,
+          "3": 0.6,
+          "5": 0.6,
+          "10": 0.6
+        },
+        "precision_at_k": {
+          "1": 0.5333333333333333,
+          "3": 0.2,
+          "5": 0.12000000000000001,
+          "10": 0.075
+        },
+        "mean_latency_ms": 2479.826226667016
+      },
+      "per_query": [
+        {
+          "query_id": "gs_easy_01",
+          "query": "Disclosure Day",
+          "difficulty": "easy",
+          "relevant_chunk_ids": [
+            "movie_1275779:tmdb_overview:chunk_001"
+          ],
+          "retrieved_chunk_ids": [
+            "movie_1275779:tmdb_overview:chunk_001",
+            "tv_sample_obsession:tmdb_overview:chunk_001",
+            "movie_sample_leviticus:tmdb_overview:chunk_001",
+            "movie_1020047:tmdb_overview:chunk_001",
+            "movie_1288341:tmdb_overview:chunk_001",
+            "movie_687163:tmdb_overview:chunk_001",
+            "tv_259909:tmdb_overview:chunk_001",
+            "movie_1398050:tmdb_overview:chunk_001"
+          ],
+          "reciprocal_rank": 1.0,
+          "recall_at_k": {
+            "1": 1.0,
+            "3": 1.0,
+            "5": 1.0,
+            "10": 1.0
+          },
+          "precision_at_k": {
+            "1": 1.0,
+            "3": 0.3333333333333333,
+            "5": 0.2,
+            "10": 0.125
+          },
+          "latency_ms": 35752.04379999923
+        },
+        {
+          "query_id": "gs_easy_02",
+          "query": "Project Hail Mary",
+          "difficulty": "easy",
+          "relevant_chunk_ids": [
+            "movie_687163:tmdb_overview:chunk_001"
+          ],
+          "retrieved_chunk_ids": [
+            "movie_sample_leviticus:tmdb_overview:chunk_001",
+            "movie_1020047:tmdb_overview:chunk_001",
+            "movie_687163:tmdb_overview:chunk_001",
+            "movie_1275779:tmdb_overview:chunk_001",
+            "tv_259909:tmdb_overview:chunk_001",
+            "movie_1288341:tmdb_overview:chunk_001",
+            "tv_sample_obsession:tmdb_overview:chunk_001",
+            "movie_1398050:tmdb_overview:chunk_001"
+          ],
+          "reciprocal_rank": 0.3333333333333333,
+          "recall_at_k": {
+            "1": 0.0,
+            "3": 1.0,
+            "5": 1.0,
+            "10": 1.0
+          },
+          "precision_at_k": {
+            "1": 0.0,
+            "3": 0.3333333333333333,
+            "5": 0.2,
+            "10": 0.125
+          },
+          "latency_ms": 93.07310000440339
+        },
+        {
+          "query_id": "gs_easy_03",
+          "query": "Dexter: Resurrection",
+          "difficulty": "easy",
+          "relevant_chunk_ids": [
+            "tv_259909:tmdb_overview:chunk_001"
+          ],
+          "retrieved_chunk_ids": [
+            "tv_259909:tmdb_overview:chunk_001",
+            "movie_1288341:tmdb_overview:chunk_001",
+            "movie_sample_leviticus:tmdb_overview:chunk_001",
+            "movie_1020047:tmdb_overview:chunk_001",
+            "movie_687163:tmdb_overview:chunk_001",
+            "movie_1275779:tmdb_overview:chunk_001",
+            "movie_1398050:tmdb_overview:chunk_001",
+            "tv_sample_obsession:tmdb_overview:chunk_001"
+          ],
+          "reciprocal_rank": 1.0,
+          "recall_at_k": {
+            "1": 1.0,
+            "3": 1.0,
+            "5": 1.0,
+            "10": 1.0
+          },
+          "precision_at_k": {
+            "1": 1.0,
+            "3": 0.3333333333333333,
+            "5": 0.2,
+            "10": 0.125
+          },
+          "latency_ms": 93.63229999871692
+        },
+        {
+          "query_id": "gs_hard_01",
+          "query": "a whistleblower exposes a corporate cover-up about extraterrestrial life",
+          "difficulty": "hard",
+          "relevant_chunk_ids": [
+            "movie_1275779:tmdb_overview:chunk_001"
+          ],
+          "retrieved_chunk_ids": [
+            "movie_1275779:tmdb_overview:chunk_001",
+            "movie_687163:tmdb_overview:chunk_001",
+            "movie_1020047:tmdb_overview:chunk_001",
+            "movie_sample_leviticus:tmdb_overview:chunk_001",
+            "tv_sample_obsession:tmdb_overview:chunk_001",
+            "tv_259909:tmdb_overview:chunk_001",
+            "movie_1288341:tmdb_overview:chunk_001",
+            "movie_1398050:tmdb_overview:chunk_001"
+          ],
+          "reciprocal_rank": 1.0,
+          "recall_at_k": {
+            "1": 1.0,
+            "3": 1.0,
+            "5": 1.0,
+            "10": 1.0
+          },
+          "precision_at_k": {
+            "1": 1.0,
+            "3": 0.3333333333333333,
+            "5": 0.2,
+            "10": 0.125
+          },
+          "latency_ms": 107.19180000160122
+        },
+        {
+          "query_id": "gs_hard_02",
+          "query": "a scientist wakes up alone in space with amnesia and has to save the sun",
+          "difficulty": "hard",
+          "relevant_chunk_ids": [
+            "movie_687163:tmdb_overview:chunk_001"
+          ],
+          "retrieved_chunk_ids": [
+            "movie_687163:tmdb_overview:chunk_001",
+            "movie_1275779:tmdb_overview:chunk_001",
+            "tv_259909:tmdb_overview:chunk_001",
+            "movie_1020047:tmdb_overview:chunk_001",
+            "tv_sample_obsession:tmdb_overview:chunk_001",
+            "movie_1288341:tmdb_overview:chunk_001",
+            "movie_sample_leviticus:tmdb_overview:chunk_001",
+            "movie_1398050:tmdb_overview:chunk_001"
+          ],
+          "reciprocal_rank": 1.0,
+          "recall_at_k": {
+            "1": 1.0,
+            "3": 1.0,
+            "5": 1.0,
+            "10": 1.0
+          },
+          "precision_at_k": {
+            "1": 1.0,
+            "3": 0.3333333333333333,
+            "5": 0.2,
+            "10": 0.125
+          },
+          "latency_ms": 114.04719999700319
+        },
+        {
+          "query_id": "gs_hard_03",
+          "query": "an ex-assassin protects her daughter from the warlord who once held her captive",
+          "difficulty": "hard",
+          "relevant_chunk_ids": [
+            "movie_1288341:tmdb_overview:chunk_001"
+          ],
+          "retrieved_chunk_ids": [
+            "movie_1288341:tmdb_overview:chunk_001",
+            "movie_sample_leviticus:tmdb_overview:chunk_001",
+            "movie_1020047:tmdb_overview:chunk_001",
+            "tv_sample_obsession:tmdb_overview:chunk_001",
+            "movie_1275779:tmdb_overview:chunk_001",
+            "tv_259909:tmdb_overview:chunk_001",
+            "movie_1398050:tmdb_overview:chunk_001",
+            "movie_687163:tmdb_overview:chunk_001"
+          ],
+          "reciprocal_rank": 1.0,
+          "recall_at_k": {
+            "1": 1.0,
+            "3": 1.0,
+            "5": 1.0,
+            "10": 1.0
+          },
+          "precision_at_k": {
+            "1": 1.0,
+            "3": 0.3333333333333333,
+            "5": 0.2,
+            "10": 0.125
+          },
+          "latency_ms": 106.09000000113156
+        },
+        {
+          "query_id": "gs_hard_04",
+          "query": "teenagers steal a car and road-trip to reunite a heartbroken friend with his college girlfriend",
+          "difficulty": "hard",
+          "relevant_chunk_ids": [
+            "movie_1398050:tmdb_overview:chunk_001"
+          ],
+          "retrieved_chunk_ids": [
+            "movie_1398050:tmdb_overview:chunk_001",
+            "tv_sample_obsession:tmdb_overview:chunk_001",
+            "movie_1020047:tmdb_overview:chunk_001",
+            "movie_sample_leviticus:tmdb_overview:chunk_001",
+            "movie_1288341:tmdb_overview:chunk_001",
+            "tv_259909:tmdb_overview:chunk_001",
+            "movie_687163:tmdb_overview:chunk_001",
+            "movie_1275779:tmdb_overview:chunk_001"
+          ],
+          "reciprocal_rank": 1.0,
+          "recall_at_k": {
+            "1": 1.0,
+            "3": 1.0,
+            "5": 1.0,
+            "10": 1.0
+          },
+          "precision_at_k": {
+            "1": 1.0,
+            "3": 0.3333333333333333,
+            "5": 0.2,
+            "10": 0.125
+          },
+          "latency_ms": 101.89119999995455
+        },
+        {
+          "query_id": "gs_hard_05",
+          "query": "a rare medieval manuscript is stolen from the Vatican after being authenticated",
+          "difficulty": "hard",
+          "relevant_chunk_ids": [
+            "movie_1020047:tmdb_overview:chunk_001"
+          ],
+          "retrieved_chunk_ids": [
+            "movie_1020047:tmdb_overview:chunk_001",
+            "movie_1288341:tmdb_overview:chunk_001",
+            "movie_sample_leviticus:tmdb_overview:chunk_001",
+            "movie_1275779:tmdb_overview:chunk_001",
+            "tv_259909:tmdb_overview:chunk_001",
+            "movie_1398050:tmdb_overview:chunk_001",
+            "tv_sample_obsession:tmdb_overview:chunk_001",
+            "movie_687163:tmdb_overview:chunk_001"
+          ],
+          "reciprocal_rank": 1.0,
+          "recall_at_k": {
+            "1": 1.0,
+            "3": 1.0,
+            "5": 1.0,
+            "10": 1.0
+          },
+          "precision_at_k": {
+            "1": 1.0,
+            "3": 0.3333333333333333,
+            "5": 0.2,
+            "10": 0.125
+          },
+          "latency_ms": 98.36509999877308
+        },
+        {
+          "query_id": "gs_hard_06",
+          "query": "a CIA analyst teams up with intelligence allies to stop a rogue black-ops conspiracy",
+          "difficulty": "hard",
+          "relevant_chunk_ids": [
+            "movie_1380291:tmdb_overview:chunk_001"
+          ],
+          "retrieved_chunk_ids": [
+            "movie_1275779:tmdb_overview:chunk_001",
+            "movie_1288341:tmdb_overview:chunk_001",
+            "tv_sample_obsession:tmdb_overview:chunk_001",
+            "movie_sample_leviticus:tmdb_overview:chunk_001",
+            "movie_687163:tmdb_overview:chunk_001",
+            "movie_1020047:tmdb_overview:chunk_001",
+            "tv_259909:tmdb_overview:chunk_001",
+            "movie_1398050:tmdb_overview:chunk_001"
+          ],
+          "reciprocal_rank": 0.0,
+          "recall_at_k": {
+            "1": 0.0,
+            "3": 0.0,
+            "5": 0.0,
+            "10": 0.0
+          },
+          "precision_at_k": {
+            "1": 0.0,
+            "3": 0.0,
+            "5": 0.0,
+            "10": 0.0
+          },
+          "latency_ms": 94.84599999996135
+        },
+        {
+          "query_id": "gs_hard_07",
+          "query": "a big-city doctor moves to a small coastal town and clashes with the quirky local residents",
+          "difficulty": "hard",
+          "relevant_chunk_ids": [
+            "tv_291084:tmdb_overview:chunk_001"
+          ],
+          "retrieved_chunk_ids": [
+            "tv_sample_obsession:tmdb_overview:chunk_001",
+            "movie_sample_leviticus:tmdb_overview:chunk_001",
+            "movie_1275779:tmdb_overview:chunk_001",
+            "movie_687163:tmdb_overview:chunk_001",
+            "movie_1020047:tmdb_overview:chunk_001",
+            "tv_259909:tmdb_overview:chunk_001",
+            "movie_1398050:tmdb_overview:chunk_001",
+            "movie_1288341:tmdb_overview:chunk_001"
+          ],
+          "reciprocal_rank": 0.0,
+          "recall_at_k": {
+            "1": 0.0,
+            "3": 0.0,
+            "5": 0.0,
+            "10": 0.0
+          },
+          "precision_at_k": {
+            "1": 0.0,
+            "3": 0.0,
+            "5": 0.0,
+            "10": 0.0
+          },
+          "latency_ms": 107.17250000016065
+        },
+        {
+          "query_id": "gs_hard_08",
+          "query": "a former slave rises to power running gladiator games in ancient Rome",
+          "difficulty": "hard",
+          "relevant_chunk_ids": [
+            "tv_240459:tmdb_overview:chunk_001"
+          ],
+          "retrieved_chunk_ids": [
+            "movie_1288341:tmdb_overview:chunk_001",
+            "movie_1020047:tmdb_overview:chunk_001",
+            "movie_1275779:tmdb_overview:chunk_001",
+            "movie_sample_leviticus:tmdb_overview:chunk_001",
+            "movie_687163:tmdb_overview:chunk_001",
+            "tv_sample_obsession:tmdb_overview:chunk_001",
+            "tv_259909:tmdb_overview:chunk_001",
+            "movie_1398050:tmdb_overview:chunk_001"
+          ],
+          "reciprocal_rank": 0.0,
+          "recall_at_k": {
+            "1": 0.0,
+            "3": 0.0,
+            "5": 0.0,
+            "10": 0.0
+          },
+          "precision_at_k": {
+            "1": 0.0,
+            "3": 0.0,
+            "5": 0.0,
+            "10": 0.0
+          },
+          "latency_ms": 115.94519999925978
+        },
+        {
+          "query_id": "gs_hard_09",
+          "query": "residents of a retirement community band together to fight an otherworldly threat",
+          "difficulty": "hard",
+          "relevant_chunk_ids": [
+            "tv_224941:tmdb_overview:chunk_001"
+          ],
+          "retrieved_chunk_ids": [
+            "movie_sample_leviticus:tmdb_overview:chunk_001",
+            "tv_sample_obsession:tmdb_overview:chunk_001",
+            "movie_1275779:tmdb_overview:chunk_001",
+            "movie_1288341:tmdb_overview:chunk_001",
+            "movie_687163:tmdb_overview:chunk_001",
+            "movie_1020047:tmdb_overview:chunk_001",
+            "movie_1398050:tmdb_overview:chunk_001",
+            "tv_259909:tmdb_overview:chunk_001"
+          ],
+          "reciprocal_rank": 0.0,
+          "recall_at_k": {
+            "1": 0.0,
+            "3": 0.0,
+            "5": 0.0,
+            "10": 0.0
+          },
+          "precision_at_k": {
+            "1": 0.0,
+            "3": 0.0,
+            "5": 0.0,
+            "10": 0.0
+          },
+          "latency_ms": 101.46330000134185
+        },
+        {
+          "query_id": "gs_hard_10",
+          "query": "a young detective's first murder case reveals a globe-trotting conspiracy",
+          "difficulty": "hard",
+          "relevant_chunk_ids": [
+            "tv_255661:tmdb_overview:chunk_001"
+          ],
+          "retrieved_chunk_ids": [
+            "movie_1275779:tmdb_overview:chunk_001",
+            "tv_259909:tmdb_overview:chunk_001",
+            "movie_sample_leviticus:tmdb_overview:chunk_001",
+            "movie_1020047:tmdb_overview:chunk_001",
+            "movie_1288341:tmdb_overview:chunk_001",
+            "tv_sample_obsession:tmdb_overview:chunk_001",
+            "movie_687163:tmdb_overview:chunk_001",
+            "movie_1398050:tmdb_overview:chunk_001"
+          ],
+          "reciprocal_rank": 0.0,
+          "recall_at_k": {
+            "1": 0.0,
+            "3": 0.0,
+            "5": 0.0,
+            "10": 0.0
+          },
+          "precision_at_k": {
+            "1": 0.0,
+            "3": 0.0,
+            "5": 0.0,
+            "10": 0.0
+          },
+          "latency_ms": 93.82130000449251
+        },
+        {
+          "query_id": "gs_hard_11",
+          "query": "a serial killer wakes from a coma and searches New York City for his missing son",
+          "difficulty": "hard",
+          "relevant_chunk_ids": [
+            "tv_259909:tmdb_overview:chunk_001"
+          ],
+          "retrieved_chunk_ids": [
+            "tv_259909:tmdb_overview:chunk_001",
+            "movie_687163:tmdb_overview:chunk_001",
+            "movie_1275779:tmdb_overview:chunk_001",
+            "movie_sample_leviticus:tmdb_overview:chunk_001",
+            "movie_1288341:tmdb_overview:chunk_001",
+            "movie_1020047:tmdb_overview:chunk_001",
+            "tv_sample_obsession:tmdb_overview:chunk_001",
+            "movie_1398050:tmdb_overview:chunk_001"
+          ],
+          "reciprocal_rank": 1.0,
+          "recall_at_k": {
+            "1": 1.0,
+            "3": 1.0,
+            "5": 1.0,
+            "10": 1.0
+          },
+          "precision_at_k": {
+            "1": 1.0,
+            "3": 0.3333333333333333,
+            "5": 0.2,
+            "10": 0.125
+          },
+          "latency_ms": 103.54299999744399
+        },
+        {
+          "query_id": "gs_hard_12",
+          "query": "a ranching family starts over in South Texas while fighting off a rival operation",
+          "difficulty": "hard",
+          "relevant_chunk_ids": [
+            "tv_299167:tmdb_overview:chunk_001"
+          ],
+          "retrieved_chunk_ids": [
+            "movie_sample_leviticus:tmdb_overview:chunk_001",
+            "movie_1288341:tmdb_overview:chunk_001",
+            "tv_sample_obsession:tmdb_overview:chunk_001",
+            "movie_1398050:tmdb_overview:chunk_001",
+            "movie_1275779:tmdb_overview:chunk_001",
+            "tv_259909:tmdb_overview:chunk_001",
+            "movie_687163:tmdb_overview:chunk_001",
+            "movie_1020047:tmdb_overview:chunk_001"
+          ],
+          "reciprocal_rank": 0.0,
+          "recall_at_k": {
+            "1": 0.0,
+            "3": 0.0,
+            "5": 0.0,
+            "10": 0.0
+          },
+          "precision_at_k": {
+            "1": 0.0,
+            "3": 0.0,
+            "5": 0.0,
+            "10": 0.0
+          },
+          "latency_ms": 114.26760000176728
+        }
+      ]
+    },
+    "vector_reranked": {
+      "strategy": "vector_reranked",
+      "num_queries": 15,
+      "k_values": [
+        1,
+        3,
+        5,
+        10
+      ],
+      "aggregate": {
+        "mrr": 0.5555555555555556,
+        "recall_at_k": {
+          "1": 0.5333333333333333,
+          "3": 0.6,
+          "5": 0.6,
+          "10": 0.6
+        },
+        "precision_at_k": {
+          "1": 0.5333333333333333,
+          "3": 0.2,
+          "5": 0.15,
+          "10": 0.15
+        },
+        "mean_latency_ms": 10.581480000594942
+      },
+      "per_query": [
+        {
+          "query_id": "gs_easy_01",
+          "query": "Disclosure Day",
+          "difficulty": "easy",
+          "relevant_chunk_ids": [
+            "movie_1275779:tmdb_overview:chunk_001"
+          ],
+          "retrieved_chunk_ids": [
+            "movie_1275779:tmdb_overview:chunk_001",
+            "tv_sample_obsession:tmdb_overview:chunk_001",
+            "movie_sample_leviticus:tmdb_overview:chunk_001",
+            "movie_1020047:tmdb_overview:chunk_001"
+          ],
+          "reciprocal_rank": 1.0,
+          "recall_at_k": {
+            "1": 1.0,
+            "3": 1.0,
+            "5": 1.0,
+            "10": 1.0
+          },
+          "precision_at_k": {
+            "1": 1.0,
+            "3": 0.3333333333333333,
+            "5": 0.25,
+            "10": 0.25
+          },
+          "latency_ms": 44.37319999851752
+        },
+        {
+          "query_id": "gs_easy_02",
+          "query": "Project Hail Mary",
+          "difficulty": "easy",
+          "relevant_chunk_ids": [
+            "movie_687163:tmdb_overview:chunk_001"
+          ],
+          "retrieved_chunk_ids": [
+            "movie_sample_leviticus:tmdb_overview:chunk_001",
+            "movie_1020047:tmdb_overview:chunk_001",
+            "movie_687163:tmdb_overview:chunk_001",
+            "movie_1275779:tmdb_overview:chunk_001"
+          ],
+          "reciprocal_rank": 0.3333333333333333,
+          "recall_at_k": {
+            "1": 0.0,
+            "3": 1.0,
+            "5": 1.0,
+            "10": 1.0
+          },
+          "precision_at_k": {
+            "1": 0.0,
+            "3": 0.3333333333333333,
+            "5": 0.25,
+            "10": 0.25
+          },
+          "latency_ms": 8.076000005530659
+        },
+        {
+          "query_id": "gs_easy_03",
+          "query": "Dexter: Resurrection",
+          "difficulty": "easy",
+          "relevant_chunk_ids": [
+            "tv_259909:tmdb_overview:chunk_001"
+          ],
+          "retrieved_chunk_ids": [
+            "tv_259909:tmdb_overview:chunk_001",
+            "movie_1288341:tmdb_overview:chunk_001",
+            "movie_sample_leviticus:tmdb_overview:chunk_001",
+            "movie_1020047:tmdb_overview:chunk_001"
+          ],
+          "reciprocal_rank": 1.0,
+          "recall_at_k": {
+            "1": 1.0,
+            "3": 1.0,
+            "5": 1.0,
+            "10": 1.0
+          },
+          "precision_at_k": {
+            "1": 1.0,
+            "3": 0.3333333333333333,
+            "5": 0.25,
+            "10": 0.25
+          },
+          "latency_ms": 6.78909999987809
+        },
+        {
+          "query_id": "gs_hard_01",
+          "query": "a whistleblower exposes a corporate cover-up about extraterrestrial life",
+          "difficulty": "hard",
+          "relevant_chunk_ids": [
+            "movie_1275779:tmdb_overview:chunk_001"
+          ],
+          "retrieved_chunk_ids": [
+            "movie_1275779:tmdb_overview:chunk_001",
+            "movie_687163:tmdb_overview:chunk_001",
+            "movie_1020047:tmdb_overview:chunk_001",
+            "movie_sample_leviticus:tmdb_overview:chunk_001"
+          ],
+          "reciprocal_rank": 1.0,
+          "recall_at_k": {
+            "1": 1.0,
+            "3": 1.0,
+            "5": 1.0,
+            "10": 1.0
+          },
+          "precision_at_k": {
+            "1": 1.0,
+            "3": 0.3333333333333333,
+            "5": 0.25,
+            "10": 0.25
+          },
+          "latency_ms": 6.530600003316067
+        },
+        {
+          "query_id": "gs_hard_02",
+          "query": "a scientist wakes up alone in space with amnesia and has to save the sun",
+          "difficulty": "hard",
+          "relevant_chunk_ids": [
+            "movie_687163:tmdb_overview:chunk_001"
+          ],
+          "retrieved_chunk_ids": [
+            "movie_687163:tmdb_overview:chunk_001",
+            "movie_1275779:tmdb_overview:chunk_001",
+            "tv_259909:tmdb_overview:chunk_001",
+            "movie_1020047:tmdb_overview:chunk_001"
+          ],
+          "reciprocal_rank": 1.0,
+          "recall_at_k": {
+            "1": 1.0,
+            "3": 1.0,
+            "5": 1.0,
+            "10": 1.0
+          },
+          "precision_at_k": {
+            "1": 1.0,
+            "3": 0.3333333333333333,
+            "5": 0.25,
+            "10": 0.25
+          },
+          "latency_ms": 7.4984000020776875
+        },
+        {
+          "query_id": "gs_hard_03",
+          "query": "an ex-assassin protects her daughter from the warlord who once held her captive",
+          "difficulty": "hard",
+          "relevant_chunk_ids": [
+            "movie_1288341:tmdb_overview:chunk_001"
+          ],
+          "retrieved_chunk_ids": [
+            "movie_1288341:tmdb_overview:chunk_001",
+            "movie_sample_leviticus:tmdb_overview:chunk_001",
+            "movie_1020047:tmdb_overview:chunk_001",
+            "tv_sample_obsession:tmdb_overview:chunk_001"
+          ],
+          "reciprocal_rank": 1.0,
+          "recall_at_k": {
+            "1": 1.0,
+            "3": 1.0,
+            "5": 1.0,
+            "10": 1.0
+          },
+          "precision_at_k": {
+            "1": 1.0,
+            "3": 0.3333333333333333,
+            "5": 0.25,
+            "10": 0.25
+          },
+          "latency_ms": 7.84620000194991
+        },
+        {
+          "query_id": "gs_hard_04",
+          "query": "teenagers steal a car and road-trip to reunite a heartbroken friend with his college girlfriend",
+          "difficulty": "hard",
+          "relevant_chunk_ids": [
+            "movie_1398050:tmdb_overview:chunk_001"
+          ],
+          "retrieved_chunk_ids": [
+            "movie_1398050:tmdb_overview:chunk_001",
+            "tv_sample_obsession:tmdb_overview:chunk_001",
+            "movie_1020047:tmdb_overview:chunk_001",
+            "movie_sample_leviticus:tmdb_overview:chunk_001"
+          ],
+          "reciprocal_rank": 1.0,
+          "recall_at_k": {
+            "1": 1.0,
+            "3": 1.0,
+            "5": 1.0,
+            "10": 1.0
+          },
+          "precision_at_k": {
+            "1": 1.0,
+            "3": 0.3333333333333333,
+            "5": 0.25,
+            "10": 0.25
+          },
+          "latency_ms": 7.311599998502061
+        },
+        {
+          "query_id": "gs_hard_05",
+          "query": "a rare medieval manuscript is stolen from the Vatican after being authenticated",
+          "difficulty": "hard",
+          "relevant_chunk_ids": [
+            "movie_1020047:tmdb_overview:chunk_001"
+          ],
+          "retrieved_chunk_ids": [
+            "movie_1020047:tmdb_overview:chunk_001",
+            "movie_1288341:tmdb_overview:chunk_001",
+            "movie_sample_leviticus:tmdb_overview:chunk_001",
+            "movie_1275779:tmdb_overview:chunk_001"
+          ],
+          "reciprocal_rank": 1.0,
+          "recall_at_k": {
+            "1": 1.0,
+            "3": 1.0,
+            "5": 1.0,
+            "10": 1.0
+          },
+          "precision_at_k": {
+            "1": 1.0,
+            "3": 0.3333333333333333,
+            "5": 0.25,
+            "10": 0.25
+          },
+          "latency_ms": 6.916700003785081
+        },
+        {
+          "query_id": "gs_hard_06",
+          "query": "a CIA analyst teams up with intelligence allies to stop a rogue black-ops conspiracy",
+          "difficulty": "hard",
+          "relevant_chunk_ids": [
+            "movie_1380291:tmdb_overview:chunk_001"
+          ],
+          "retrieved_chunk_ids": [
+            "movie_1275779:tmdb_overview:chunk_001",
+            "movie_1288341:tmdb_overview:chunk_001",
+            "tv_sample_obsession:tmdb_overview:chunk_001",
+            "movie_sample_leviticus:tmdb_overview:chunk_001"
+          ],
+          "reciprocal_rank": 0.0,
+          "recall_at_k": {
+            "1": 0.0,
+            "3": 0.0,
+            "5": 0.0,
+            "10": 0.0
+          },
+          "precision_at_k": {
+            "1": 0.0,
+            "3": 0.0,
+            "5": 0.0,
+            "10": 0.0
+          },
+          "latency_ms": 6.965300002775621
+        },
+        {
+          "query_id": "gs_hard_07",
+          "query": "a big-city doctor moves to a small coastal town and clashes with the quirky local residents",
+          "difficulty": "hard",
+          "relevant_chunk_ids": [
+            "tv_291084:tmdb_overview:chunk_001"
+          ],
+          "retrieved_chunk_ids": [
+            "tv_sample_obsession:tmdb_overview:chunk_001",
+            "movie_sample_leviticus:tmdb_overview:chunk_001",
+            "movie_1275779:tmdb_overview:chunk_001",
+            "movie_687163:tmdb_overview:chunk_001"
+          ],
+          "reciprocal_rank": 0.0,
+          "recall_at_k": {
+            "1": 0.0,
+            "3": 0.0,
+            "5": 0.0,
+            "10": 0.0
+          },
+          "precision_at_k": {
+            "1": 0.0,
+            "3": 0.0,
+            "5": 0.0,
+            "10": 0.0
+          },
+          "latency_ms": 7.148099997721147
+        },
+        {
+          "query_id": "gs_hard_08",
+          "query": "a former slave rises to power running gladiator games in ancient Rome",
+          "difficulty": "hard",
+          "relevant_chunk_ids": [
+            "tv_240459:tmdb_overview:chunk_001"
+          ],
+          "retrieved_chunk_ids": [
+            "movie_1288341:tmdb_overview:chunk_001",
+            "movie_1020047:tmdb_overview:chunk_001",
+            "movie_1275779:tmdb_overview:chunk_001",
+            "movie_sample_leviticus:tmdb_overview:chunk_001"
+          ],
+          "reciprocal_rank": 0.0,
+          "recall_at_k": {
+            "1": 0.0,
+            "3": 0.0,
+            "5": 0.0,
+            "10": 0.0
+          },
+          "precision_at_k": {
+            "1": 0.0,
+            "3": 0.0,
+            "5": 0.0,
+            "10": 0.0
+          },
+          "latency_ms": 7.518599995819386
+        },
+        {
+          "query_id": "gs_hard_09",
+          "query": "residents of a retirement community band together to fight an otherworldly threat",
+          "difficulty": "hard",
+          "relevant_chunk_ids": [
+            "tv_224941:tmdb_overview:chunk_001"
+          ],
+          "retrieved_chunk_ids": [
+            "movie_sample_leviticus:tmdb_overview:chunk_001",
+            "tv_sample_obsession:tmdb_overview:chunk_001",
+            "movie_1275779:tmdb_overview:chunk_001",
+            "movie_1288341:tmdb_overview:chunk_001"
+          ],
+          "reciprocal_rank": 0.0,
+          "recall_at_k": {
+            "1": 0.0,
+            "3": 0.0,
+            "5": 0.0,
+            "10": 0.0
+          },
+          "precision_at_k": {
+            "1": 0.0,
+            "3": 0.0,
+            "5": 0.0,
+            "10": 0.0
+          },
+          "latency_ms": 6.5776000046753325
+        },
+        {
+          "query_id": "gs_hard_10",
+          "query": "a young detective's first murder case reveals a globe-trotting conspiracy",
+          "difficulty": "hard",
+          "relevant_chunk_ids": [
+            "tv_255661:tmdb_overview:chunk_001"
+          ],
+          "retrieved_chunk_ids": [
+            "movie_1275779:tmdb_overview:chunk_001",
+            "tv_259909:tmdb_overview:chunk_001",
+            "movie_sample_leviticus:tmdb_overview:chunk_001",
+            "movie_1020047:tmdb_overview:chunk_001"
+          ],
+          "reciprocal_rank": 0.0,
+          "recall_at_k": {
+            "1": 0.0,
+            "3": 0.0,
+            "5": 0.0,
+            "10": 0.0
+          },
+          "precision_at_k": {
+            "1": 0.0,
+            "3": 0.0,
+            "5": 0.0,
+            "10": 0.0
+          },
+          "latency_ms": 7.814799995685462
+        },
+        {
+          "query_id": "gs_hard_11",
+          "query": "a serial killer wakes from a coma and searches New York City for his missing son",
+          "difficulty": "hard",
+          "relevant_chunk_ids": [
+            "tv_259909:tmdb_overview:chunk_001"
+          ],
+          "retrieved_chunk_ids": [
+            "tv_259909:tmdb_overview:chunk_001",
+            "movie_687163:tmdb_overview:chunk_001",
+            "movie_1275779:tmdb_overview:chunk_001",
+            "movie_sample_leviticus:tmdb_overview:chunk_001"
+          ],
+          "reciprocal_rank": 1.0,
+          "recall_at_k": {
+            "1": 1.0,
+            "3": 1.0,
+            "5": 1.0,
+            "10": 1.0
+          },
+          "precision_at_k": {
+            "1": 1.0,
+            "3": 0.3333333333333333,
+            "5": 0.25,
+            "10": 0.25
+          },
+          "latency_ms": 8.904700000130106
+        },
+        {
+          "query_id": "gs_hard_12",
+          "query": "a ranching family starts over in South Texas while fighting off a rival operation",
+          "difficulty": "hard",
+          "relevant_chunk_ids": [
+            "tv_299167:tmdb_overview:chunk_001"
+          ],
+          "retrieved_chunk_ids": [
+            "movie_sample_leviticus:tmdb_overview:chunk_001",
+            "movie_1288341:tmdb_overview:chunk_001",
+            "tv_sample_obsession:tmdb_overview:chunk_001",
+            "movie_1398050:tmdb_overview:chunk_001"
+          ],
+          "reciprocal_rank": 0.0,
+          "recall_at_k": {
+            "1": 0.0,
+            "3": 0.0,
+            "5": 0.0,
+            "10": 0.0
+          },
+          "precision_at_k": {
+            "1": 0.0,
+            "3": 0.0,
+            "5": 0.0,
+            "10": 0.0
+          },
+          "latency_ms": 18.45129999855999
+        }
+      ]
+    },
+    "hybrid": {
+      "strategy": "hybrid",
+      "num_queries": 15,
+      "k_values": [
+        1,
+        3,
+        5,
+        10
+      ],
+      "aggregate": {
+        "mrr": 0.5555555555555556,
+        "recall_at_k": {
+          "1": 0.5333333333333333,
+          "3": 0.6,
+          "5": 0.6,
+          "10": 0.6
+        },
+        "precision_at_k": {
+          "1": 0.5333333333333333,
+          "3": 0.2,
+          "5": 0.12000000000000001,
+          "10": 0.075
+        },
+        "mean_latency_ms": 9.828520001125677
+      },
+      "per_query": [
+        {
+          "query_id": "gs_easy_01",
+          "query": "Disclosure Day",
+          "difficulty": "easy",
+          "relevant_chunk_ids": [
+            "movie_1275779:tmdb_overview:chunk_001"
+          ],
+          "retrieved_chunk_ids": [
+            "movie_1275779:tmdb_overview:chunk_001",
+            "tv_sample_obsession:tmdb_overview:chunk_001",
+            "movie_sample_leviticus:tmdb_overview:chunk_001",
+            "movie_1020047:tmdb_overview:chunk_001",
+            "movie_1288341:tmdb_overview:chunk_001",
+            "movie_687163:tmdb_overview:chunk_001",
+            "tv_259909:tmdb_overview:chunk_001",
+            "movie_1398050:tmdb_overview:chunk_001"
+          ],
+          "reciprocal_rank": 1.0,
+          "recall_at_k": {
+            "1": 1.0,
+            "3": 1.0,
+            "5": 1.0,
+            "10": 1.0
+          },
+          "precision_at_k": {
+            "1": 1.0,
+            "3": 0.3333333333333333,
+            "5": 0.2,
+            "10": 0.125
+          },
+          "latency_ms": 8.28469999396475
+        },
+        {
+          "query_id": "gs_easy_02",
+          "query": "Project Hail Mary",
+          "difficulty": "easy",
+          "relevant_chunk_ids": [
+            "movie_687163:tmdb_overview:chunk_001"
+          ],
+          "retrieved_chunk_ids": [
+            "movie_sample_leviticus:tmdb_overview:chunk_001",
+            "movie_1020047:tmdb_overview:chunk_001",
+            "movie_687163:tmdb_overview:chunk_001",
+            "movie_1275779:tmdb_overview:chunk_001",
+            "tv_259909:tmdb_overview:chunk_001",
+            "movie_1288341:tmdb_overview:chunk_001",
+            "tv_sample_obsession:tmdb_overview:chunk_001",
+            "movie_1398050:tmdb_overview:chunk_001"
+          ],
+          "reciprocal_rank": 0.3333333333333333,
+          "recall_at_k": {
+            "1": 0.0,
+            "3": 1.0,
+            "5": 1.0,
+            "10": 1.0
+          },
+          "precision_at_k": {
+            "1": 0.0,
+            "3": 0.3333333333333333,
+            "5": 0.2,
+            "10": 0.125
+          },
+          "latency_ms": 7.998000000952743
+        },
+        {
+          "query_id": "gs_easy_03",
+          "query": "Dexter: Resurrection",
+          "difficulty": "easy",
+          "relevant_chunk_ids": [
+            "tv_259909:tmdb_overview:chunk_001"
+          ],
+          "retrieved_chunk_ids": [
+            "tv_259909:tmdb_overview:chunk_001",
+            "movie_1288341:tmdb_overview:chunk_001",
+            "movie_sample_leviticus:tmdb_overview:chunk_001",
+            "movie_1020047:tmdb_overview:chunk_001",
+            "movie_687163:tmdb_overview:chunk_001",
+            "movie_1275779:tmdb_overview:chunk_001",
+            "movie_1398050:tmdb_overview:chunk_001",
+            "tv_sample_obsession:tmdb_overview:chunk_001"
+          ],
+          "reciprocal_rank": 1.0,
+          "recall_at_k": {
+            "1": 1.0,
+            "3": 1.0,
+            "5": 1.0,
+            "10": 1.0
+          },
+          "precision_at_k": {
+            "1": 1.0,
+            "3": 0.3333333333333333,
+            "5": 0.2,
+            "10": 0.125
+          },
+          "latency_ms": 7.8694000039831735
+        },
+        {
+          "query_id": "gs_hard_01",
+          "query": "a whistleblower exposes a corporate cover-up about extraterrestrial life",
+          "difficulty": "hard",
+          "relevant_chunk_ids": [
+            "movie_1275779:tmdb_overview:chunk_001"
+          ],
+          "retrieved_chunk_ids": [
+            "movie_1275779:tmdb_overview:chunk_001",
+            "movie_687163:tmdb_overview:chunk_001",
+            "tv_sample_obsession:tmdb_overview:chunk_001",
+            "tv_259909:tmdb_overview:chunk_001",
+            "movie_1020047:tmdb_overview:chunk_001",
+            "movie_sample_leviticus:tmdb_overview:chunk_001",
+            "movie_1398050:tmdb_overview:chunk_001",
+            "movie_1288341:tmdb_overview:chunk_001"
+          ],
+          "reciprocal_rank": 1.0,
+          "recall_at_k": {
+            "1": 1.0,
+            "3": 1.0,
+            "5": 1.0,
+            "10": 1.0
+          },
+          "precision_at_k": {
+            "1": 1.0,
+            "3": 0.3333333333333333,
+            "5": 0.2,
+            "10": 0.125
+          },
+          "latency_ms": 7.148000004235655
+        },
+        {
+          "query_id": "gs_hard_02",
+          "query": "a scientist wakes up alone in space with amnesia and has to save the sun",
+          "difficulty": "hard",
+          "relevant_chunk_ids": [
+            "movie_687163:tmdb_overview:chunk_001"
+          ],
+          "retrieved_chunk_ids": [
+            "movie_687163:tmdb_overview:chunk_001",
+            "movie_1275779:tmdb_overview:chunk_001",
+            "movie_1020047:tmdb_overview:chunk_001",
+            "movie_1398050:tmdb_overview:chunk_001",
+            "tv_259909:tmdb_overview:chunk_001",
+            "movie_1288341:tmdb_overview:chunk_001",
+            "tv_sample_obsession:tmdb_overview:chunk_001",
+            "movie_sample_leviticus:tmdb_overview:chunk_001"
+          ],
+          "reciprocal_rank": 1.0,
+          "recall_at_k": {
+            "1": 1.0,
+            "3": 1.0,
+            "5": 1.0,
+            "10": 1.0
+          },
+          "precision_at_k": {
+            "1": 1.0,
+            "3": 0.3333333333333333,
+            "5": 0.2,
+            "10": 0.125
+          },
+          "latency_ms": 9.045400001923554
+        },
+        {
+          "query_id": "gs_hard_03",
+          "query": "an ex-assassin protects her daughter from the warlord who once held her captive",
+          "difficulty": "hard",
+          "relevant_chunk_ids": [
+            "movie_1288341:tmdb_overview:chunk_001"
+          ],
+          "retrieved_chunk_ids": [
+            "movie_1288341:tmdb_overview:chunk_001",
+            "movie_1020047:tmdb_overview:chunk_001",
+            "tv_259909:tmdb_overview:chunk_001",
+            "movie_687163:tmdb_overview:chunk_001",
+            "movie_sample_leviticus:tmdb_overview:chunk_001",
+            "tv_sample_obsession:tmdb_overview:chunk_001",
+            "movie_1275779:tmdb_overview:chunk_001",
+            "movie_1398050:tmdb_overview:chunk_001"
+          ],
+          "reciprocal_rank": 1.0,
+          "recall_at_k": {
+            "1": 1.0,
+            "3": 1.0,
+            "5": 1.0,
+            "10": 1.0
+          },
+          "precision_at_k": {
+            "1": 1.0,
+            "3": 0.3333333333333333,
+            "5": 0.2,
+            "10": 0.125
+          },
+          "latency_ms": 9.85940000100527
+        },
+        {
+          "query_id": "gs_hard_04",
+          "query": "teenagers steal a car and road-trip to reunite a heartbroken friend with his college girlfriend",
+          "difficulty": "hard",
+          "relevant_chunk_ids": [
+            "movie_1398050:tmdb_overview:chunk_001"
+          ],
+          "retrieved_chunk_ids": [
+            "movie_1398050:tmdb_overview:chunk_001",
+            "tv_sample_obsession:tmdb_overview:chunk_001",
+            "movie_687163:tmdb_overview:chunk_001",
+            "tv_259909:tmdb_overview:chunk_001",
+            "movie_sample_leviticus:tmdb_overview:chunk_001",
+            "movie_1020047:tmdb_overview:chunk_001",
+            "movie_1275779:tmdb_overview:chunk_001",
+            "movie_1288341:tmdb_overview:chunk_001"
+          ],
+          "reciprocal_rank": 1.0,
+          "recall_at_k": {
+            "1": 1.0,
+            "3": 1.0,
+            "5": 1.0,
+            "10": 1.0
+          },
+          "precision_at_k": {
+            "1": 1.0,
+            "3": 0.3333333333333333,
+            "5": 0.2,
+            "10": 0.125
+          },
+          "latency_ms": 10.32830000622198
+        },
+        {
+          "query_id": "gs_hard_05",
+          "query": "a rare medieval manuscript is stolen from the Vatican after being authenticated",
+          "difficulty": "hard",
+          "relevant_chunk_ids": [
+            "movie_1020047:tmdb_overview:chunk_001"
+          ],
+          "retrieved_chunk_ids": [
+            "movie_1020047:tmdb_overview:chunk_001",
+            "movie_1288341:tmdb_overview:chunk_001",
+            "tv_259909:tmdb_overview:chunk_001",
+            "movie_1275779:tmdb_overview:chunk_001",
+            "movie_sample_leviticus:tmdb_overview:chunk_001",
+            "movie_687163:tmdb_overview:chunk_001",
+            "tv_sample_obsession:tmdb_overview:chunk_001",
+            "movie_1398050:tmdb_overview:chunk_001"
+          ],
+          "reciprocal_rank": 1.0,
+          "recall_at_k": {
+            "1": 1.0,
+            "3": 1.0,
+            "5": 1.0,
+            "10": 1.0
+          },
+          "precision_at_k": {
+            "1": 1.0,
+            "3": 0.3333333333333333,
+            "5": 0.2,
+            "10": 0.125
+          },
+          "latency_ms": 10.372700002335478
+        },
+        {
+          "query_id": "gs_hard_06",
+          "query": "a CIA analyst teams up with intelligence allies to stop a rogue black-ops conspiracy",
+          "difficulty": "hard",
+          "relevant_chunk_ids": [
+            "movie_1380291:tmdb_overview:chunk_001"
+          ],
+          "retrieved_chunk_ids": [
+            "movie_1275779:tmdb_overview:chunk_001",
+            "movie_687163:tmdb_overview:chunk_001",
+            "tv_sample_obsession:tmdb_overview:chunk_001",
+            "movie_1398050:tmdb_overview:chunk_001",
+            "movie_1288341:tmdb_overview:chunk_001",
+            "movie_sample_leviticus:tmdb_overview:chunk_001",
+            "tv_259909:tmdb_overview:chunk_001",
+            "movie_1020047:tmdb_overview:chunk_001"
+          ],
+          "reciprocal_rank": 0.0,
+          "recall_at_k": {
+            "1": 0.0,
+            "3": 0.0,
+            "5": 0.0,
+            "10": 0.0
+          },
+          "precision_at_k": {
+            "1": 0.0,
+            "3": 0.0,
+            "5": 0.0,
+            "10": 0.0
+          },
+          "latency_ms": 11.461800000688527
+        },
+        {
+          "query_id": "gs_hard_07",
+          "query": "a big-city doctor moves to a small coastal town and clashes with the quirky local residents",
+          "difficulty": "hard",
+          "relevant_chunk_ids": [
+            "tv_291084:tmdb_overview:chunk_001"
+          ],
+          "retrieved_chunk_ids": [
+            "movie_687163:tmdb_overview:chunk_001",
+            "tv_sample_obsession:tmdb_overview:chunk_001",
+            "movie_sample_leviticus:tmdb_overview:chunk_001",
+            "movie_1020047:tmdb_overview:chunk_001",
+            "movie_1275779:tmdb_overview:chunk_001",
+            "movie_1398050:tmdb_overview:chunk_001",
+            "movie_1288341:tmdb_overview:chunk_001",
+            "tv_259909:tmdb_overview:chunk_001"
+          ],
+          "reciprocal_rank": 0.0,
+          "recall_at_k": {
+            "1": 0.0,
+            "3": 0.0,
+            "5": 0.0,
+            "10": 0.0
+          },
+          "precision_at_k": {
+            "1": 0.0,
+            "3": 0.0,
+            "5": 0.0,
+            "10": 0.0
+          },
+          "latency_ms": 13.376299997617025
+        },
+        {
+          "query_id": "gs_hard_08",
+          "query": "a former slave rises to power running gladiator games in ancient Rome",
+          "difficulty": "hard",
+          "relevant_chunk_ids": [
+            "tv_240459:tmdb_overview:chunk_001"
+          ],
+          "retrieved_chunk_ids": [
+            "movie_1288341:tmdb_overview:chunk_001",
+            "movie_687163:tmdb_overview:chunk_001",
+            "movie_1275779:tmdb_overview:chunk_001",
+            "movie_1020047:tmdb_overview:chunk_001",
+            "tv_sample_obsession:tmdb_overview:chunk_001",
+            "movie_1398050:tmdb_overview:chunk_001",
+            "movie_sample_leviticus:tmdb_overview:chunk_001",
+            "tv_259909:tmdb_overview:chunk_001"
+          ],
+          "reciprocal_rank": 0.0,
+          "recall_at_k": {
+            "1": 0.0,
+            "3": 0.0,
+            "5": 0.0,
+            "10": 0.0
+          },
+          "precision_at_k": {
+            "1": 0.0,
+            "3": 0.0,
+            "5": 0.0,
+            "10": 0.0
+          },
+          "latency_ms": 11.712200001056772
+        },
+        {
+          "query_id": "gs_hard_09",
+          "query": "residents of a retirement community band together to fight an otherworldly threat",
+          "difficulty": "hard",
+          "relevant_chunk_ids": [
+            "tv_224941:tmdb_overview:chunk_001"
+          ],
+          "retrieved_chunk_ids": [
+            "movie_1275779:tmdb_overview:chunk_001",
+            "tv_sample_obsession:tmdb_overview:chunk_001",
+            "movie_sample_leviticus:tmdb_overview:chunk_001",
+            "movie_687163:tmdb_overview:chunk_001",
+            "movie_1398050:tmdb_overview:chunk_001",
+            "movie_1288341:tmdb_overview:chunk_001",
+            "tv_259909:tmdb_overview:chunk_001",
+            "movie_1020047:tmdb_overview:chunk_001"
+          ],
+          "reciprocal_rank": 0.0,
+          "recall_at_k": {
+            "1": 0.0,
+            "3": 0.0,
+            "5": 0.0,
+            "10": 0.0
+          },
+          "precision_at_k": {
+            "1": 0.0,
+            "3": 0.0,
+            "5": 0.0,
+            "10": 0.0
+          },
+          "latency_ms": 11.392299995350186
+        },
+        {
+          "query_id": "gs_hard_10",
+          "query": "a young detective's first murder case reveals a globe-trotting conspiracy",
+          "difficulty": "hard",
+          "relevant_chunk_ids": [
+            "tv_255661:tmdb_overview:chunk_001"
+          ],
+          "retrieved_chunk_ids": [
+            "movie_1275779:tmdb_overview:chunk_001",
+            "tv_259909:tmdb_overview:chunk_001",
+            "tv_sample_obsession:tmdb_overview:chunk_001",
+            "movie_sample_leviticus:tmdb_overview:chunk_001",
+            "movie_1020047:tmdb_overview:chunk_001",
+            "movie_1398050:tmdb_overview:chunk_001",
+            "movie_687163:tmdb_overview:chunk_001",
+            "movie_1288341:tmdb_overview:chunk_001"
+          ],
+          "reciprocal_rank": 0.0,
+          "recall_at_k": {
+            "1": 0.0,
+            "3": 0.0,
+            "5": 0.0,
+            "10": 0.0
+          },
+          "precision_at_k": {
+            "1": 0.0,
+            "3": 0.0,
+            "5": 0.0,
+            "10": 0.0
+          },
+          "latency_ms": 8.778500006883405
+        },
+        {
+          "query_id": "gs_hard_11",
+          "query": "a serial killer wakes from a coma and searches New York City for his missing son",
+          "difficulty": "hard",
+          "relevant_chunk_ids": [
+            "tv_259909:tmdb_overview:chunk_001"
+          ],
+          "retrieved_chunk_ids": [
+            "tv_259909:tmdb_overview:chunk_001",
+            "movie_687163:tmdb_overview:chunk_001",
+            "movie_1275779:tmdb_overview:chunk_001",
+            "movie_1020047:tmdb_overview:chunk_001",
+            "movie_1288341:tmdb_overview:chunk_001",
+            "movie_1398050:tmdb_overview:chunk_001",
+            "movie_sample_leviticus:tmdb_overview:chunk_001",
+            "tv_sample_obsession:tmdb_overview:chunk_001"
+          ],
+          "reciprocal_rank": 1.0,
+          "recall_at_k": {
+            "1": 1.0,
+            "3": 1.0,
+            "5": 1.0,
+            "10": 1.0
+          },
+          "precision_at_k": {
+            "1": 1.0,
+            "3": 0.3333333333333333,
+            "5": 0.2,
+            "10": 0.125
+          },
+          "latency_ms": 9.833999996772036
+        },
+        {
+          "query_id": "gs_hard_12",
+          "query": "a ranching family starts over in South Texas while fighting off a rival operation",
+          "difficulty": "hard",
+          "relevant_chunk_ids": [
+            "tv_299167:tmdb_overview:chunk_001"
+          ],
+          "retrieved_chunk_ids": [
+            "movie_sample_leviticus:tmdb_overview:chunk_001",
+            "tv_sample_obsession:tmdb_overview:chunk_001",
+            "tv_259909:tmdb_overview:chunk_001",
+            "movie_1288341:tmdb_overview:chunk_001",
+            "movie_687163:tmdb_overview:chunk_001",
+            "movie_1398050:tmdb_overview:chunk_001",
+            "movie_1275779:tmdb_overview:chunk_001",
+            "movie_1020047:tmdb_overview:chunk_001"
+          ],
+          "reciprocal_rank": 0.0,
+          "recall_at_k": {
+            "1": 0.0,
+            "3": 0.0,
+            "5": 0.0,
+            "10": 0.0
+          },
+          "precision_at_k": {
+            "1": 0.0,
+            "3": 0.0,
+            "5": 0.0,
+            "10": 0.0
+          },
+          "latency_ms": 9.966800003894605
+        }
+      ]
+    }
+  },
+  "selection_metric": "mrr",
+  "best_approach": "vector",
+  "best_score": 0.5555555555555556
+}

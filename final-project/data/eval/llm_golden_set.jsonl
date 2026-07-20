@@ -1,0 +1,6 @@
+{"query_id":"rag_01","question":"What happens in Disclosure Day?","category":"rag","expected_facts":["whistleblower","extraterrestrial life","cover-up"],"answerable":true}
+{"query_id":"rag_02","question":"Describe the central problem in Project Hail Mary.","category":"rag","expected_facts":["scientist","space","save the Sun"],"answerable":true}
+{"query_id":"rag_03","question":"What is Dexter searching for after waking from a coma?","category":"rag","expected_facts":["missing son","New York"],"answerable":true}
+{"query_id":"rag_04","question":"Why does the former assassin fight in Seven Snipers?","category":"rag","expected_facts":["protects her daughter","warlord"],"answerable":true}
+{"query_id":"rag_05","question":"What triggers the mystery in In the Hand of Dante?","category":"rag","expected_facts":["medieval manuscript","stolen","Vatican"],"answerable":true}
+{"query_id":"rag_unanswerable_01","question":"Who composed the soundtrack for Disclosure Day?","category":"unanswerable","expected_facts":[],"answerable":false}

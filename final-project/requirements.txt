@@ -1,0 +1,19 @@
+# Local analytical database and SQL chatbot queries.
+duckdb==1.5.4
+pytz==2026.2
+
+# RAG embedding dependencies.
+sentence-transformers==5.6.0
+chromadb==1.5.9
+
+# Hosted LLM inference for the unified chatbot.
+groq==1.5.0
+
+# Terminal UI polish for scripts/chat.py (optional: falls back to plain text if missing).
+rich==15.0.0
+
+# Streamlit web chat frontend (app.py). Reuses the same orchestrator as scripts/chat.py.
+streamlit==1.59.2
+
+# Monitoring dashboard data aggregation.
+pandas==3.0.3
