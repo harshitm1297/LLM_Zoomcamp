@@ -1,0 +1,43 @@
+services:
+  - type: web
+    name: pop-culture-detective
+    runtime: docker
+    repo: https://github.com/harshitm1297/LLM_Zoomcamp
+    branch: main
+    rootDir: final-project
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    dockerCommand: python scripts/start_cloud.py
+    plan: starter
+    region: frankfurt
+    healthCheckPath: /_stcore/health
+    autoDeployTrigger: commit
+    envVars:
+      - key: GROQ_API_KEY
+        sync: false
+      - key: LOCAL_DATA_ROOT
+        value: /app/data
+      - key: LOCAL_DUCKDB_PATH
+        value: /app/data/warehouse/cultural_mood_tracker.duckdb
+      - key: CHROMA_DB_PATH
+        value: /app/data/chroma_db
+      - key: OBSERVABILITY_DB_PATH
+        value: /app/data/monitoring/observability.db
+      - key: HF_HOME
+        value: /app/data/model-cache
+      - key: PROCESS_RUN_ID
+        value: sample
+      - key: RETRIEVAL_STRATEGY
+        value: vector
+      - key: RETRIEVAL_TOP_K
+        value: "5"
+      - key: RETRIEVAL_CANDIDATE_K
+        value: "20"
+      - key: ENABLE_QUERY_REWRITING
+        value: "true"
+      - key: PROMPT_VARIANT
+        value: strict
+    disk:
+      name: pop-culture-data
+      mountPath: /app/data
+      sizeGB: 5
