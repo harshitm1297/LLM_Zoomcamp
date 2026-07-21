@@ -22,4 +22,5 @@ link-mode = "copy"
 [tool.uv.workspace]
 members = [
     "llm-zoomcamp-hw5",
+    "llm-zoomcamp-hw6",
 ]
