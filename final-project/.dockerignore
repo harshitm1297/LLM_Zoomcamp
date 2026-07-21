@@ -5,11 +5,8 @@ __pycache__
 *.pyc
 .pytest_cache
 chroma_db
-data/raw
-data/staging
 data/processed
 data/reports
 data/logs
-data/warehouse
 data/monitoring
 output

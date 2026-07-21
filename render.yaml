@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: pop-culture-detective
+    name: cultural-mood-tracker
     runtime: docker
     repo: https://github.com/harshitm1297/LLM_Zoomcamp
     branch: main
@@ -17,8 +17,6 @@ services:
         sync: false
       - key: LOCAL_DATA_ROOT
         value: /app/data
-      - key: LOCAL_DUCKDB_PATH
-        value: /app/data/warehouse/cultural_mood_tracker.duckdb
       - key: CHROMA_DB_PATH
         value: /app/data/chroma_db
       - key: OBSERVABILITY_DB_PATH
@@ -38,6 +36,6 @@ services:
       - key: PROMPT_VARIANT
         value: strict
     disk:
-      name: pop-culture-data
+      name: cultural-mood-data
       mountPath: /app/data
       sizeGB: 5

@@ -127,7 +127,7 @@ def resolve_local_document_chunks_path(
 
     raise RuntimeError(
         "No processed document chunks were found. Pass --input-path/--process-run-id, "
-        "set DOCUMENT_CHUNKS_PATH/PROCESS_RUN_ID, or run the transform pipeline first."
+        "set DOCUMENT_CHUNKS_PATH/PROCESS_RUN_ID, or run the bootstrap/refresh command first."
     )
 
 
@@ -151,5 +151,5 @@ def load_document_chunks(
     input_path: Path | None = None,
     process_run_id: str | None = None,
 ) -> list[dict[str, Any]]:
-    """Load canonical document chunks from the local processed-data directory."""
+    """Load prepared document chunks from the local processed-data directory."""
     return _load_local_document_chunks(input_path=input_path, process_run_id=process_run_id)

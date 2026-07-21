@@ -1,12 +1,9 @@
-# Local analytical database and SQL chatbot queries.
-duckdb==1.5.4
-pytz==2026.2
-
 # RAG embedding dependencies.
+torch==2.13.0
 sentence-transformers==5.6.0
 chromadb==1.5.9
 
-# Hosted LLM inference for the unified chatbot.
+# Hosted LLM inference for the RAG chatbot.
 groq==1.5.0
 
 # Terminal UI polish for scripts/chat.py (optional: falls back to plain text if missing).

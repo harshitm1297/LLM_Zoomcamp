@@ -96,7 +96,9 @@ def main() -> int:
 
     args = parse_args(default_process_run_id)
     if not args.process_run_id and args.input_path is None:
-        raise RuntimeError("No processed run available. Run transform first or pass --process-run-id.")
+        raise RuntimeError(
+            "No prepared run available. Run bootstrap/refresh first or pass --process-run-id."
+        )
 
     process_run_id = args.process_run_id or args.input_path.parent.name
 

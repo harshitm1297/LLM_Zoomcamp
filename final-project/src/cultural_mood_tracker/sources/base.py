@@ -10,6 +10,17 @@ from urllib.parse import urlencode
 from urllib.request import Request, urlopen
 
 
+SENSITIVE_QUERY_PARAMETER = re.compile(
+    r"([?&](?:api_key|access_token|token|key)=)[^&]+",
+    flags=re.IGNORECASE,
+)
+
+
+def redact_url(url: str) -> str:
+    """Hide common query-string credentials before URLs enter logs or errors."""
+    return SENSITIVE_QUERY_PARAMETER.sub(r"\1<redacted>", url)
+
+
 def http_get_json(
     url: str,
     params: dict[str, Any] | None = None,
@@ -27,11 +38,11 @@ def http_get_json(
             return json.loads(body)
     except HTTPError as exc:
         body = exc.read().decode("utf-8", errors="replace")
-        raise RuntimeError(f"HTTP {exc.code} for {url}\n{body}") from exc
+        raise RuntimeError(f"HTTP {exc.code} for {redact_url(url)}\n{body}") from exc
     except URLError as exc:
-        raise RuntimeError(f"Network error for {url}: {exc}") from exc
+        raise RuntimeError(f"Network error for {redact_url(url)}: {exc}") from exc
     except JSONDecodeError as exc:
-        raise RuntimeError(f"Non-JSON response for {url}: {exc}") from exc
+        raise RuntimeError(f"Non-JSON response for {redact_url(url)}: {exc}") from exc
 
 
 def http_get_text(
@@ -50,9 +61,9 @@ def http_get_text(
             return response.read().decode("utf-8", errors="replace")
     except HTTPError as exc:
         body = exc.read().decode("utf-8", errors="replace")
-        raise RuntimeError(f"HTTP {exc.code} for {url}\n{body}") from exc
+        raise RuntimeError(f"HTTP {exc.code} for {redact_url(url)}\n{body}") from exc
     except URLError as exc:
-        raise RuntimeError(f"Network error for {url}: {exc}") from exc
+        raise RuntimeError(f"Network error for {redact_url(url)}: {exc}") from exc
 
 
 def http_download_binary(url: str, *, user_agent: str, timeout: int = 180) -> bytes:
@@ -62,9 +73,9 @@ def http_download_binary(url: str, *, user_agent: str, timeout: int = 180) -> by
             return response.read()
     except HTTPError as exc:
         body = exc.read().decode("utf-8", errors="replace")
-        raise RuntimeError(f"HTTP {exc.code} for {url}\n{body}") from exc
+        raise RuntimeError(f"HTTP {exc.code} for {redact_url(url)}\n{body}") from exc
     except URLError as exc:
-        raise RuntimeError(f"Network error for {url}: {exc}") from exc
+        raise RuntimeError(f"Network error for {redact_url(url)}: {exc}") from exc
 
 
 def slugify(value: str) -> str:

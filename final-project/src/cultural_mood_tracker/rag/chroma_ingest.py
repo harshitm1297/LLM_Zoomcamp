@@ -136,6 +136,7 @@ def ingest_embedding_records(
     persist_dir: Path,
     collection_name: str = DEFAULT_CHROMA_COLLECTION,
     batch_size: int = 500,
+    replace_collection: bool = False,
 ) -> int:
     if batch_size < 1:
         raise ValueError("batch_size must be at least 1")
@@ -152,6 +153,11 @@ def ingest_embedding_records(
         path=str(persist_dir),
         settings=Settings(anonymized_telemetry=False),
     )
+    if replace_collection:
+        try:
+            client.delete_collection(collection_name)
+        except Exception:  # Collection does not exist yet.
+            pass
     collection = client.get_or_create_collection(
         name=collection_name,
         metadata={"hnsw:space": "cosine"},
@@ -177,6 +183,7 @@ def ingest_embeddings_file(
     persist_dir: Path = Path(DEFAULT_CHROMA_DB_DIR),
     collection_name: str = DEFAULT_CHROMA_COLLECTION,
     batch_size: int = 500,
+    replace_collection: bool = False,
 ) -> int:
     records = load_embedding_records(input_path)
     LOGGER.info("Loaded %s embedding records from %s", len(records), input_path)
@@ -185,6 +192,7 @@ def ingest_embeddings_file(
         persist_dir=persist_dir,
         collection_name=collection_name,
         batch_size=batch_size,
+        replace_collection=replace_collection,
     )
     LOGGER.info("Inserted %s embedding records into %s/%s", inserted, persist_dir, collection_name)
     return inserted

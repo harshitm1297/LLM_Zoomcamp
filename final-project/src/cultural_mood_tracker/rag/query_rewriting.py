@@ -10,7 +10,7 @@ EXPANSIONS = {
     "feel good": "uplifting positive comforting",
     "popular": "audience attention ratings reviews",
     "popularity": "audience attention ratings reviews",
-    "critics": "critic editorial reviews",
+    "reviews": "audience reactions opinions",
 }
 
 

@@ -29,7 +29,7 @@ from cultural_mood_tracker.rag.prompting import DEFAULT_MAX_CONTEXT_CHARS
 
 
 st.set_page_config(
-    page_title="Pop Culture Detective",
+    page_title="Cultural Mood Tracker",
     page_icon="🎬",
     layout="centered",
     initial_sidebar_state="expanded",
@@ -210,10 +210,10 @@ st.markdown(
     """
     <div class="app-hero">
         <p class="app-kicker">Local-first RAG assistant</p>
-        <h1 class="app-title">Pop Culture Detective</h1>
+        <h1 class="app-title">Cultural Mood Tracker</h1>
         <p class="app-subtitle">Explore movie and television descriptions with answers grounded only in the indexed source passages.</p>
     </div>
-    <p class="example-strip"><strong>Try:</strong> What happens in Disclosure Day? &nbsp;·&nbsp; What themes appear in Obsession? &nbsp;·&nbsp; Which title involves a scientist in space?</p>
+    <p class="example-strip"><strong>Try:</strong> What is The Sheep Detectives about? &nbsp;·&nbsp; What themes appear in Obsession? &nbsp;·&nbsp; Which title involves a scientist in space?</p>
     """,
     unsafe_allow_html=True,
 )
@@ -336,7 +336,7 @@ with st.sidebar:
         unsafe_allow_html=True,
     )
     st.markdown(
-        '<p class="sidebar-copy"><strong>Bundled demo:</strong> 8 titles — 6 movies and 2 TV series. Run the optional full ingestion pipeline to build a larger corpus.</p>',
+        '<p class="sidebar-copy"><strong>Corpus:</strong> The bundled demo contains 8 titles. A full local ingestion replaces it with the titles selected by the parameters in <code>.env</code>.</p>',
         unsafe_allow_html=True,
     )
     if st.button("Clear conversation", use_container_width=True):

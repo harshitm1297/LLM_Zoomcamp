@@ -12,12 +12,14 @@ RUN apt-get update \
 WORKDIR /app
 COPY requirements.txt ./requirements.txt
 RUN pip install --no-cache-dir --upgrade pip \
+    && pip install --no-cache-dir torch==2.13.0+cpu --index-url https://download.pytorch.org/whl/cpu \
     && pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 RUN useradd --create-home --uid 10001 appuser \
     && mkdir -p /app/data /app/chroma_db /app/.cache/huggingface \
     && chown -R appuser:appuser /app \
+    && sed -i 's/\r$//' /app/docker-entrypoint.sh \
     && chmod +x /app/docker-entrypoint.sh
 
 ENTRYPOINT ["/app/docker-entrypoint.sh"]

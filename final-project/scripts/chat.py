@@ -36,7 +36,7 @@ MODE_STYLES: dict[str, tuple[str, str]] = {
 
 
 def parse_args() -> argparse.Namespace:
-    parser = argparse.ArgumentParser(description="RAG-only Pop Culture Detective chatbot.")
+    parser = argparse.ArgumentParser(description="RAG-only Cultural Mood Tracker chatbot.")
     parser.add_argument(
         "--query",
         default=None,
@@ -144,11 +144,11 @@ def _interactive_loop(orchestrator: ChatOrchestrator, *, args: argparse.Namespac
 
     if console is not None:
         console.print(
-            "[bold]Pop Culture Detective RAG chat ready.[/bold] "
+            "[bold]Cultural Mood Tracker RAG chat ready.[/bold] "
             "Type a question, or 'exit' to quit."
         )
     else:
-        print("Pop Culture Detective RAG chat ready. Type a question, or 'exit' to quit.")
+        print("Cultural Mood Tracker RAG chat ready. Type a question, or 'exit' to quit.")
 
     while True:
         try:

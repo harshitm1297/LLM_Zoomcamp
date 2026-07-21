@@ -39,6 +39,11 @@ def parse_args() -> argparse.Namespace:
         type=int,
         help="Number of vectors to upsert per ChromaDB call.",
     )
+    parser.add_argument(
+        "--replace",
+        action="store_true",
+        help="Replace the collection before ingesting, avoiding stale documents.",
+    )
     return parser.parse_args()
 
 
@@ -62,6 +67,7 @@ def main() -> int:
         persist_dir=persist_dir,
         collection_name=args.collection_name,
         batch_size=args.batch_size,
+        replace_collection=args.replace,
     )
     print(f"ChromaDB persisted at: {persist_dir}")
     print(f"collection={args.collection_name} inserted={inserted}")
