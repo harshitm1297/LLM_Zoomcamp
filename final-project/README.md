@@ -92,9 +92,9 @@ streamlit run pages\1_Monitoring.py --server.port 8502
 
 ## Application preview
 
-The chatbot shows its grounded answer, source count, latency, expandable retrieved evidence, and feedback controls:
+The chatbot home screen presents several possible applications: looking up a plot, exploring a title's themes, and finding an indexed title from a natural-language description:
 
-![Cultural Mood Tracker answering a question about The Sheep Detectives](docs/images/chatbot-answer.png)
+![Cultural Mood Tracker application and example use cases](docs/images/chatbot-use-cases.png)
 
 The monitoring page reports request volume, feedback, latency, route usage, errors, retrieval similarity, and recent interactions:
 
